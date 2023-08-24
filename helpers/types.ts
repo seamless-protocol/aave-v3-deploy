@@ -17,7 +17,8 @@ export type eNetwork =
   | eHarmonyNetwork
   | eFantomNetwork
   | eOptimismNetwork
-  | eTenderlyNetwork;
+  | eTenderlyNetwork
+  | eBaseNetwork;
 
 type eTenderlyNetwork = "tenderly";
 
@@ -29,6 +30,11 @@ export enum eFantomNetwork {
 export enum eOptimismNetwork {
   main = "optimism",
   testnet = "optimism-testnet",
+}
+
+export enum eBaseNetwork {
+  main = "base",
+  testnet = "base-testnet",
 }
 
 export enum eEthereumNetwork {

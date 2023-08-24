@@ -20,6 +20,7 @@ import AvalancheMarket from "../markets/avalanche";
 import FantomMarket from "../markets/fantom";
 import PolygonMarket from "../markets/polygon";
 import OptimisticConfig from "../markets/optimistic";
+import BaseConfig from "../markets/base";
 import ArbitrumConfig from "../markets/arbitrum";
 import { isValidAddress } from "./utilities/utils";
 import { AaveProtocolDataProvider } from "../typechain";
@@ -47,6 +48,7 @@ export enum ConfigNames {
   Fantom = "Fantom",
   Polygon = "Polygon",
   Optimistic = "Optimistic",
+  Base = "Base",
   Arbitrum = "Arbitrum",
   Ethereum = "Ethereum",
 }
@@ -110,6 +112,8 @@ export const loadPoolConfig = (configName: ConfigNames): PoolConfiguration => {
       return PolygonMarket;
     case ConfigNames.Optimistic:
       return OptimisticConfig;
+    case ConfigNames.Base:
+      return BaseConfig;
     case ConfigNames.Arbitrum:
       return ArbitrumConfig;
     case ConfigNames.Ethereum:

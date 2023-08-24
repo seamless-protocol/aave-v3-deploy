@@ -1,6 +1,7 @@
 import {
   AssetType,
   eAvalancheNetwork,
+  eBaseNetwork,
   eFantomNetwork,
   eHarmonyNetwork,
   eOptimismNetwork,
@@ -92,6 +93,9 @@ export const CommonsConfig: ICommonConfiguration = {
       [eEthereumNetwork.rinkeby]: {
         StkAave: ZERO_ADDRESS,
       },
+      [eBaseNetwork.testnet]: {
+        SEAM: ZERO_ADDRESS,
+      },
     },
     rewardsOracle: {
       [eArbitrumNetwork.arbitrumTestnet]: {
@@ -106,8 +110,23 @@ export const CommonsConfig: ICommonConfiguration = {
       [eEthereumNetwork.rinkeby]: {
         StkAave: ZERO_ADDRESS,
       },
+      [eBaseNetwork.testnet]: {
+        SEAM: ZERO_ADDRESS,
+      },
     },
     incentivesInput: {
+      [eBaseNetwork.testnet]: [
+        {
+          emissionPerSecond: "34629756533",
+          duration: 7890000,
+          asset: "WETH",
+          assetType: AssetType.AToken,
+          reward: "SEAM",
+          rewardOracle: "0",
+          transferStrategy: TransferStrategy.PullRewardsStrategy,
+          transferStrategyParams: "0",
+        }
+      ],
       [eArbitrumNetwork.arbitrumTestnet]: [
         {
           emissionPerSecond: "34629756533",
@@ -158,6 +177,8 @@ export const CommonsConfig: ICommonConfiguration = {
     [eArbitrumNetwork.arbitrumTestnet]: true,
     [eOptimismNetwork.main]: true,
     [eOptimismNetwork.testnet]: true,
+    [eBaseNetwork.main]: true,
+    [eBaseNetwork.testnet]: true,
   },
   ParaswapRegistry: {
     [eEthereumNetwork.main]: "0xa68bEA62Dc4034A689AA0F58A76681433caCa663",

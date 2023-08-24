@@ -11,6 +11,7 @@ import {
   eAvalancheNetwork,
   eFantomNetwork,
   eOptimismNetwork,
+  eBaseNetwork,
 } from "./types";
 
 require("dotenv").config();
@@ -20,6 +21,7 @@ export const DEFAULT_GAS_PRICE = 8000000000;
 export const INFURA_KEY = process.env.INFURA_KEY || "";
 export const ALCHEMY_KEY = process.env.ALCHEMY_KEY || "";
 export const TENDERLY_FORK_ID = process.env.TENDERLY_FORK_ID || "";
+export const TENDERLY_PROJECT_ID = process.env.TENDERLY_PROJECT_ID || "";
 export const FORK = (process.env.FORK || "") as eNetwork;
 export const FORK_BLOCK_NUMBER = process.env.FORK_BLOCK_NUMBER
   ? parseInt(process.env.FORK_BLOCK_NUMBER)
@@ -83,6 +85,8 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
   [eFantomNetwork.testnet]: "https://rpc.testnet.fantom.network/",
   [eOptimismNetwork.testnet]: `https://opt-goerli.g.alchemy.com/v2/demo`,
   [eOptimismNetwork.main]: `https://mainnet.optimism.io`,
+  [eBaseNetwork.testnet]: `https://base-goerli.gateway.tenderly.co/${TENDERLY_PROJECT_ID}`,
+  [eBaseNetwork.main]: `https://base.gateway.tenderly.co/${TENDERLY_PROJECT_ID}`,
   tenderly: `https://rpc.tenderly.co/fork/${TENDERLY_FORK_ID}`,
   [eEthereumNetwork.goerli]: `https://eth-goerli.alchemyapi.io/v2/${getAlchemyKey(
     eEthereumNetwork.goerli

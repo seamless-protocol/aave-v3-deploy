@@ -2,6 +2,7 @@ import { parseEther, parseUnits } from "ethers/lib/utils";
 import {
   eArbitrumNetwork,
   eAvalancheNetwork,
+  eBaseNetwork,
   eEthereumNetwork,
   eFantomNetwork,
   eHarmonyNetwork,
@@ -41,6 +42,8 @@ export const WRAPPED_NATIVE_TOKEN_PER_NETWORK: { [network: string]: string } = {
   [eArbitrumNetwork.arbitrumTestnet]:
     "0x8592a357252606f5cA2897BD4f500201F7245C28",
   [eOptimismNetwork.main]: "0x4200000000000000000000000000000000000006",
+  [eBaseNetwork.main]: "0x4200000000000000000000000000000000000006",
+  [eBaseNetwork.testnet]: "0x4200000000000000000000000000000000000006",
   [eAvalancheNetwork.avalanche]: "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
   [eFantomNetwork.main]: "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
   [eHarmonyNetwork.main]: "0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a",
@@ -90,6 +93,8 @@ export const chainlinkAggregatorProxy: Record<string, string> = {
   rinkeby: "0x8A753747A1Fa494EC906cE90E9f37563A8AF630e",
   harmony: "0xdCD81FbbD6c4572A69a534D8b8152c562dA8AbEF",
   optimism: "0xA969bEB73d918f6100163Cd0fba3C586C269bee1",
+  base: "0x71041dddad3595F9CEd3DcCFBe3D1F4b0a16Bb70",
+  "base-testnet": "0xcD2A119bD1F7DF95d706DE6F2057fDD45A0503E2",
   fantom: "0xf4766552D15AE4d256Ad41B6cf2933482B0680dc",
   "harmony-testnet": "0xcEe686F89bc0dABAd95AEAAC980aE1d97A075FAD",
   "optimism-testnet": "0xEFFC18fC3b7eb8E676dac549E0c693ad50D1Ce31",
@@ -113,6 +118,8 @@ export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
   rinkeby: "0x8A753747A1Fa494EC906cE90E9f37563A8AF630e",
   harmony: "0xbaf7C8149D586055ed02c286367A41E0aDA96b7C",
   optimism: "0xA969bEB73d918f6100163Cd0fba3C586C269bee1",
+  base: "0x71041dddad3595F9CEd3DcCFBe3D1F4b0a16Bb70",
+  "base-testnet": "0xcD2A119bD1F7DF95d706DE6F2057fDD45A0503E2",
   fantom: "0x11DdD3d147E5b83D01cee7070027092397d63658",
   "harmony-testnet": "0x4f11696cE92D78165E1F8A9a4192444087a45b64",
   "optimism-testnet": "0xEFFC18fC3b7eb8E676dac549E0c693ad50D1Ce31",
@@ -135,6 +142,7 @@ export const POOL_ADMIN: Record<string, string> = {
   [eFantomNetwork.main]: "0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949",
   [eHarmonyNetwork.main]: "0xb2f0C5f37f4beD2cB51C44653cD5D84866BDcd2D",
   [eOptimismNetwork.main]: "0xE50c8C619d05ff98b22Adf991F17602C774F785c",
+  [eBaseNetwork.main]: "0x96eD8B3D311D69b4D6227BA6DbF9e880738C8913", // TODO
   [ePolygonNetwork.polygon]: "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772",
   [eEthereumNetwork.main]: ETHEREUM_SHORT_EXECUTOR,
 };
@@ -145,6 +153,7 @@ export const EMERGENCY_ADMIN: Record<string, string> = {
   [eFantomNetwork.main]: "0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949",
   [eHarmonyNetwork.main]: "0xb2f0C5f37f4beD2cB51C44653cD5D84866BDcd2D",
   [eOptimismNetwork.main]: "0xE50c8C619d05ff98b22Adf991F17602C774F785c",
+  [eBaseNetwork.main]: "0x96eD8B3D311D69b4D6227BA6DbF9e880738C8913", // TODO
   [ePolygonNetwork.polygon]: "0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58",
   [eEthereumNetwork.main]: ETHEREUM_SHORT_EXECUTOR,
 };
@@ -189,6 +198,7 @@ export const MULTISIG_ADDRESS: { [key: string]: string } = {
   [eFantomNetwork.main]: "0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949",
   [eHarmonyNetwork.main]: "0xb2f0C5f37f4beD2cB51C44653cD5D84866BDcd2D",
   [eOptimismNetwork.main]: "0xE50c8C619d05ff98b22Adf991F17602C774F785c",
+  [eBaseNetwork.main]: "0x96eD8B3D311D69b4D6227BA6DbF9e880738C8913", // TODO
   // Polygon Multisig
   [ePolygonNetwork.polygon]: "0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58",
 };

@@ -9,6 +9,7 @@ import {
 import {
   eArbitrumNetwork,
   eAvalancheNetwork,
+  eBaseNetwork,
   eEthereumNetwork,
   eFantomNetwork,
   eHarmonyNetwork,
@@ -109,6 +110,11 @@ export default {
       420
     ),
     [eOptimismNetwork.main]: getCommonNetworkConfig(eOptimismNetwork.main, 10),
+    [eBaseNetwork.testnet]: getCommonNetworkConfig(
+      eBaseNetwork.testnet,
+      84531
+    ),
+    [eBaseNetwork.main]: getCommonNetworkConfig(eBaseNetwork.main, 8453),
     [eEthereumNetwork.goerli]: getCommonNetworkConfig(
       eEthereumNetwork.goerli,
       5
