@@ -34,7 +34,7 @@ import {
   VARIABLE_DEBT_PREFIX,
 } from "./deploy-ids";
 import { ZERO_ADDRESS } from "./constants";
-import { getTestnetReserveAddressFromSymbol, POOL_DATA_PROVIDER } from ".";
+import { getTestnetReserveAddressFromSymbol, getTestnetRewardAddressFromSymbol, POOL_DATA_PROVIDER } from ".";
 import { ENABLE_REWARDS } from "./env";
 
 declare var hre: HardhatRuntimeEnvironment;
@@ -335,6 +335,29 @@ export const getReserveAddress = async (
 
   if (!assetAddress || isZeroOrNull) {
     throw `Missing asset address for asset ${symbol}`;
+  }
+
+  return assetAddress;
+};
+
+export const getRewardAddress = async (
+  poolConfig: ICommonConfiguration,
+  symbol: string
+) => {
+  const network = (
+    process.env.FORK ? process.env.FORK : hre.network.name
+  ) as eNetwork;
+
+  let assetAddress = poolConfig.IncentivesConfig.rewards?.[network]?.[symbol];
+
+  const isZeroOrNull = !assetAddress || assetAddress === ZERO_ADDRESS;
+
+  if (isTestnetMarket(poolConfig) && isZeroOrNull) {
+    return await getTestnetRewardAddressFromSymbol(symbol);
+  }
+
+  if (!assetAddress || isZeroOrNull) {
+    throw `Missing reward address for asset ${symbol}`;
   }
 
   return assetAddress;

@@ -42,7 +42,7 @@ nano .env
 Run the deployments scripts and specify which network & aave market configs you wish to deploy.
 
 ```
-HARDHAT_NETWORK=goerli npx hardhat deploy
+MARKET_NAME=Base HARDHAT_NETWORK=base-testnet npx hardhat deploy
 ```
 
 ## How to deploy Aave V3 in fork network
@@ -50,7 +50,7 @@ HARDHAT_NETWORK=goerli npx hardhat deploy
 You can use the environment variable `FORK` with the network name to deploy into a fork.
 
 ```
-FORK=main MARKET_NAME=Aave npx hardhat deploy
+FORK=base MARKET_NAME=Base npx hardhat deploy
 ```
 
 ## How to integrate in your Hardhat project
@@ -109,7 +109,7 @@ describe('Tests', () => {
 ## How to verify your contract deployments
 
 ```
-npx hardhat --network XYZ etherscan-verify --api-key YZX
+npx hardhat --network base-testnet etherscan-verify --api-url https://api-goerli.basescan.org/ --sleep --solc-input --api-key {api_key}
 ```
 
 ## Project Structure

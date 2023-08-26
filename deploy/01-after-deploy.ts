@@ -37,6 +37,9 @@ const func: DeployFunction = async function ({
   console.log("- Setup Liquidation protocol fee");
   await hre.run("setup-liquidation-protocol-fee");
 
+  console.log("- Setup incentives emissions");
+  await hre.run("setup-incentives-emissions");
+
   if (isTestnetMarket(poolConfig)) {
     // Disable faucet minting and borrowing of wrapped native token
     await hre.run("disable-faucet-native-testnets");

@@ -1,4 +1,4 @@
-import { eBaseNetwork, IAaveConfiguration } from "./../../helpers/types";
+import { AssetType, eBaseNetwork, IAaveConfiguration, TransferStrategy } from "./../../helpers/types";
 import AaveMarket from "../aave";
 import {
   strategyUSDC,
@@ -34,6 +34,32 @@ export const BaseConfig: IAaveConfiguration = {
       // CBETH: ZERO_ADDRESS,
     },
   },
+  IncentivesConfig: {
+    enabled: {
+      [eBaseNetwork.testnet]: true,
+    },
+    rewards: {
+      [eBaseNetwork.testnet]: {
+        SEAM: "0x980d0cbb2e314c496b808cac88a8a4e8893161e1",
+        USDC: ZERO_ADDRESS,
+      },
+    },
+    rewardsOracle: {},
+    incentivesInput: {
+      [eBaseNetwork.testnet]: [
+        {
+          emissionPerSecond: "100",
+          duration: 7890000,
+          asset: "WETH",
+          assetType: AssetType.AToken,
+          reward: "SEAM",
+          rewardOracle: "0",
+          transferStrategy: TransferStrategy.PullRewardsStrategy,
+          transferStrategyParams: "0",
+        }
+      ],
+    },
+  },
   EModes: {
     // StableEMode: {
     //   id: "1",
@@ -50,6 +76,7 @@ export const BaseConfig: IAaveConfiguration = {
       USDC: "0x7e860098F58bBFC8648a4311b374B1D669a2bc6B",
       WETH: "0x71041dddad3595F9CEd3DcCFBe3D1F4b0a16Bb70",
       // CBETH: "0x806b4Ac04501c29769051e42783cF04dCE41440b",
+      // TODO: need price feed for SEAM
     },
   },
 };

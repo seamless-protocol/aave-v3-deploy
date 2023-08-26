@@ -55,6 +55,7 @@ import {
   STAKE_AAVE_IMPL_V3,
   L2_ENCODER,
   FAUCET_OWNABLE_ID,
+  TESTNET_REWARD_TOKEN_PREFIX,
 } from "./deploy-ids";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { RewardsController } from "../typechain";
@@ -260,6 +261,23 @@ export const getTestnetReserveAddressFromSymbol = async (symbol: string) => {
     `${symbol}${TESTNET_TOKEN_PREFIX}`
   );
   return testnetReserve.address;
+};
+
+export const getTestnetRewardAddressFromSymbol = async (symbol: string) => {
+  const testnetReserve = await hre.deployments.get(
+    `${symbol}${TESTNET_REWARD_TOKEN_PREFIX}`
+  );
+  return testnetReserve.address;
+};
+
+export const getReserveTokensAddresses = async (address: string) => {
+  const dataProviderArtifact = await hre.deployments.get(POOL_DATA_PROVIDER);
+  const dataProvider = (await hre.ethers.getContractAt(
+    dataProviderArtifact.abi,
+    dataProviderArtifact.address
+  )) as AaveProtocolDataProvider;
+
+  return await dataProvider.getReserveTokensAddresses(address);
 };
 
 export const getFaucet = async (address?: string): Promise<Faucet> =>
