@@ -143,7 +143,7 @@ export const POOL_ADMIN: Record<string, string> = {
   [eFantomNetwork.main]: "0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949",
   [eHarmonyNetwork.main]: "0xb2f0C5f37f4beD2cB51C44653cD5D84866BDcd2D",
   [eOptimismNetwork.main]: "0xE50c8C619d05ff98b22Adf991F17602C774F785c",
-  [eBaseNetwork.main]: "0x96eD8B3D311D69b4D6227BA6DbF9e880738C8913", // TODO
+  [eBaseNetwork.main]: "0xA1b5f2cc9B407177CD8a4ACF1699fa0b99955A22",
   [ePolygonNetwork.polygon]: "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772",
   [eEthereumNetwork.main]: ETHEREUM_SHORT_EXECUTOR,
 };
@@ -154,7 +154,7 @@ export const EMERGENCY_ADMIN: Record<string, string> = {
   [eFantomNetwork.main]: "0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949",
   [eHarmonyNetwork.main]: "0xb2f0C5f37f4beD2cB51C44653cD5D84866BDcd2D",
   [eOptimismNetwork.main]: "0xE50c8C619d05ff98b22Adf991F17602C774F785c",
-  [eBaseNetwork.main]: "0x96eD8B3D311D69b4D6227BA6DbF9e880738C8913", // TODO
+  [eBaseNetwork.main]: "0xA1b5f2cc9B407177CD8a4ACF1699fa0b99955A22",
   [ePolygonNetwork.polygon]: "0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58",
   [eEthereumNetwork.main]: ETHEREUM_SHORT_EXECUTOR,
 };
@@ -199,7 +199,7 @@ export const MULTISIG_ADDRESS: { [key: string]: string } = {
   [eFantomNetwork.main]: "0x39CB97b105173b56b5a2b4b33AD25d6a50E6c949",
   [eHarmonyNetwork.main]: "0xb2f0C5f37f4beD2cB51C44653cD5D84866BDcd2D",
   [eOptimismNetwork.main]: "0xE50c8C619d05ff98b22Adf991F17602C774F785c",
-  [eBaseNetwork.main]: "0x96eD8B3D311D69b4D6227BA6DbF9e880738C8913", // TODO
+  [eBaseNetwork.main]: "0xA1b5f2cc9B407177CD8a4ACF1699fa0b99955A22",
   // Polygon Multisig
   [ePolygonNetwork.polygon]: "0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58",
 };

@@ -93,9 +93,6 @@ export const CommonsConfig: ICommonConfiguration = {
       [eEthereumNetwork.rinkeby]: {
         StkAave: ZERO_ADDRESS,
       },
-      [eBaseNetwork.testnet]: {
-        SEAM: ZERO_ADDRESS,
-      },
     },
     rewardsOracle: {
       [eArbitrumNetwork.arbitrumTestnet]: {
@@ -115,18 +112,6 @@ export const CommonsConfig: ICommonConfiguration = {
       },
     },
     incentivesInput: {
-      [eBaseNetwork.testnet]: [
-        {
-          emissionPerSecond: "34629756533",
-          duration: 7890000,
-          asset: "WETH",
-          assetType: AssetType.AToken,
-          reward: "SEAM",
-          rewardOracle: "0",
-          transferStrategy: TransferStrategy.PullRewardsStrategy,
-          transferStrategyParams: "0",
-        }
-      ],
       [eArbitrumNetwork.arbitrumTestnet]: [
         {
           emissionPerSecond: "34629756533",

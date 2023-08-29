@@ -39,16 +39,22 @@ task(
       continue;
     }
 
-    if (incentive.assetType !== AssetType.AToken) {
-      console.warn("assetType is not aToken");
+    let assetAddress = await getReserveAddress(config, incentive.asset);
+
+    const { aTokenAddress, stableDebtTokenAddress, variableDebtTokenAddress } = await getReserveTokensAddresses(assetAddress);
+
+    if (incentive.assetType === AssetType.AToken) {
+      assetAddress = aTokenAddress;
+    } else if (incentive.assetType === AssetType.VariableDebtToken) {
+      assetAddress = variableDebtTokenAddress;
+    } else if (incentive.assetType === AssetType.StableDebtToken) {
+      assetAddress = stableDebtTokenAddress;
+    } else {
+      console.warn(`invalid asset type ${incentive.assetType}`);
       continue;
     }
 
-    const assetAddress = await getReserveAddress(config, incentive.asset);
-
     const rewardAddress = await getRewardAddress(config, incentive.reward);
-
-    const { aTokenAddress } = await getReserveTokensAddresses(assetAddress);
 
     const oracleAddress = await getOracleByAsset(config, incentive.reward);
 
@@ -56,7 +62,7 @@ task(
       totalSupply: 0,
       emissionPerSecond: incentive.emissionPerSecond,
       distributionEnd: Math.floor(Date.now() / 1000) + incentive.duration,
-      asset: aTokenAddress,
+      asset: assetAddress,
       reward: rewardAddress,
       rewardOracle: oracleAddress,
       transferStrategy: transferStrategy.address
