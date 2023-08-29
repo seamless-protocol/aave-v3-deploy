@@ -11,12 +11,15 @@ import { MARKET_NAME } from "../../helpers/env";
 import { FORK } from "../../helpers/hardhat-config-helpers";
 import { AssetType, TransferStrategy, eNetwork } from "../../helpers/types";
 import { RewardsDataTypes } from "../../typechain/@aave/periphery-v3/contracts/rewards/RewardsController";
+import {
+  MOCK_CHAINLINK_AGGREGATORS_PRICES,
+} from "../../helpers/constants";
 
 task(
   `setup-incentives-emissions`,
   `Setups rewards incentives emissions from configuration`
 ).setAction(async (_, hre,) => {
-  const { incentivesEmissionManager, incentivesRewardsVault } = await hre.getNamedAccounts();
+  const { deployer, incentivesEmissionManager, incentivesRewardsVault } = await hre.getNamedAccounts();
   const network = FORK ? FORK : (hre.network.name as eNetwork);
   const config = await loadPoolConfig(MARKET_NAME as ConfigNames);
 
@@ -56,7 +59,21 @@ task(
 
     const rewardAddress = await getRewardAddress(config, incentive.reward);
 
-    const oracleAddress = await getOracleByAsset(config, incentive.reward);
+    let oracleAddress: string;
+    try {
+      oracleAddress = await getOracleByAsset(config, incentive.reward);
+    } catch(e) {
+      const price = MOCK_CHAINLINK_AGGREGATORS_PRICES[incentive.reward];
+      if (!price) {
+        throw `[ERROR] Missing mock price for asset ${incentive.reward} at MOCK_CHAINLINK_AGGREGATORS_PRICES constant located at src/constants.ts`;
+      }
+      const artifact = await hre.deployments.deploy("MockAggregator", {
+        from: deployer,
+        args: [price],
+      });
+
+      oracleAddress = artifact.address;
+    }
 
     const incentiveConfig: RewardsDataTypes.RewardsConfigInputStruct = {
       totalSupply: 0,
