@@ -39,7 +39,7 @@ export const BaseConfig: IAaveConfiguration = {
     },
     rewards: {
       [eBaseNetwork.main]: {
-        SEAM: "", // TODO
+        SEAM: "0x5607718c64334eb5174CB2226af891a6ED82c7C6", // TODO
       },
       [eBaseNetwork.testnet]: {
         SEAM: "0x980d0cbb2e314c496b808cac88a8a4e8893161e1",
