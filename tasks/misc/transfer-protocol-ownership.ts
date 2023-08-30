@@ -12,8 +12,15 @@ import {
   getPoolAddressesProviderRegistry,
   getWrappedTokenGateway,
 } from "./../../helpers/contract-getters";
+import {
+  ConfigNames,
+  loadPoolConfig,
+  getParamPerNetwork,
+} from "../../helpers/market-config-helpers";
+import { eNetwork } from "../../helpers/types";
 import { task } from "hardhat/config";
 import { getAddressFromJson, waitForTx } from "../../helpers/utilities/tx";
+import { MARKET_NAME } from "../../helpers/env";
 import { exit } from "process";
 import {
   GOVERNANCE_BRIDGE_EXECUTOR,
@@ -68,16 +75,44 @@ task(
 
   const emissionManager = await getEmissionManager();
   const currentOwner = await poolAddressesProvider.owner();
-  const paraswapSwapAdapter = await getOwnableContract(
-    await (
-      await hre.deployments.get("ParaSwapLiquiditySwapAdapter")
-    ).address
+
+  const config = await loadPoolConfig(MARKET_NAME as ConfigNames);
+
+  const paraswapAugustusRegistry = getParamPerNetwork(
+    config.ParaswapRegistry,
+    networkId as eNetwork
   );
-  const paraswapRepayAdapter = await getOwnableContract(
-    await (
-      await hre.deployments.get("ParaSwapRepayAdapter")
-    ).address
-  );
+
+  if (paraswapAugustusRegistry) {
+    const paraswapSwapAdapter = await getOwnableContract(
+      await (
+        await hre.deployments.get("ParaSwapLiquiditySwapAdapter")
+      ).address
+    );
+    const paraswapRepayAdapter = await getOwnableContract(
+      await (
+        await hre.deployments.get("ParaSwapRepayAdapter")
+      ).address
+    );
+
+    /** Start of Paraswap Helpers Ownership */
+    const isDeployerAdminParaswapRepayAdapter =
+      (await paraswapRepayAdapter.owner()) == deployer;
+    if (isDeployerAdminParaswapRepayAdapter) {
+      await paraswapRepayAdapter.transferOwnership(desiredAdmin);
+      console.log("- Transferred ParaswapRepayAdapter ownership");
+    }
+
+    const isDeployerAdminParaswapSwapAdapter =
+      (await paraswapSwapAdapter.owner()) == deployer;
+
+    if (isDeployerAdminParaswapSwapAdapter) {
+      await paraswapSwapAdapter.transferOwnership(desiredAdmin);
+      console.log("- Transferred ParaswapSwapAdapter ownership");
+    }
+    /** End of Paraswap Helpers Ownership */
+  }
+
 
   if (currentOwner === desiredAdmin) {
     console.log(
@@ -94,23 +129,6 @@ task(
     console.log(`  - Market owner loaded from pool prov:`, currentOwner);
     exit(403);
   }
-
-  /** Start of Paraswap Helpers Ownership */
-  const isDeployerAdminParaswapRepayAdapter =
-    (await paraswapRepayAdapter.owner()) == deployer;
-  if (isDeployerAdminParaswapRepayAdapter) {
-    await paraswapRepayAdapter.transferOwnership(desiredAdmin);
-    console.log("- Transferred ParaswapRepayAdapter ownership");
-  }
-
-  const isDeployerAdminParaswapSwapAdapter =
-    (await paraswapSwapAdapter.owner()) == deployer;
-
-  if (isDeployerAdminParaswapSwapAdapter) {
-    await paraswapSwapAdapter.transferOwnership(desiredAdmin);
-    console.log("- Transferred ParaswapSwapAdapter ownership");
-  }
-  /** End of Paraswap Helpers Ownership */
 
   /** Start of Emergency Admin transfer */
   const isDeployerEmergencyAdmin = await aclManager.isEmergencyAdmin(

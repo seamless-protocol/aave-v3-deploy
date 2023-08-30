@@ -17,6 +17,11 @@ import {
   getOwnableContract,
 } from "./../../helpers/contract-getters";
 import { EMISSION_MANAGER_ID } from "./../../helpers/deploy-ids";
+import {
+  ConfigNames,
+  loadPoolConfig,
+  getParamPerNetwork,
+} from "../../helpers/market-config-helpers";
 import { FORK } from "../../helpers/hardhat-config-helpers";
 import {
   TREASURY_PROXY_ID,
@@ -29,7 +34,9 @@ import {
   getPoolAddressesProviderRegistry,
   getWrappedTokenGateway,
 } from "../../helpers/contract-getters";
+import { MARKET_NAME } from "../../helpers/env";
 import { task } from "hardhat/config";
+import { eNetwork } from "../../helpers/types";
 import { getProxyAdminBySlot } from "../../helpers/utilities/tx";
 import { exit } from "process";
 
@@ -121,16 +128,27 @@ task(
     );
   }
 
-  const paraswapSwapAdapter = await getOwnableContract(
-    await (
-      await hre.deployments.get("ParaSwapLiquiditySwapAdapter")
-    ).address
+  const config = await loadPoolConfig(MARKET_NAME as ConfigNames);
+
+  const paraswapAugustusRegistry = getParamPerNetwork(
+    config.ParaswapRegistry,
+    networkId as eNetwork
   );
-  const paraswapRepayAdapter = await getOwnableContract(
-    await (
-      await hre.deployments.get("ParaSwapRepayAdapter")
-    ).address
-  );
+
+  let paraswapSwapAdapter;
+  let paraswapRepayAdapter;
+  if (paraswapAugustusRegistry) {
+    paraswapSwapAdapter = await getOwnableContract(
+      await (
+        await hre.deployments.get("ParaSwapLiquiditySwapAdapter")
+      ).address
+    );
+    paraswapRepayAdapter = await getOwnableContract(
+      await (
+        await hre.deployments.get("ParaSwapRepayAdapter")
+      ).address
+    );
+  }
 
   /** Output of results*/
   const result = [
@@ -237,17 +255,22 @@ task(
         (await poolAddressesProvider.getAddress(incentivesControllerId)) ===
         rewardsController.address,
     },
-    {
-      role: "ParaSwapRepayAdapter owner",
-      address: await paraswapRepayAdapter.owner(),
-      assert: (await paraswapRepayAdapter.owner()) == desiredAdmin,
-    },
-    {
-      role: "ParaSwapSwapAdapter owner",
-      address: await paraswapSwapAdapter.owner(),
-      assert: (await paraswapSwapAdapter.owner()) == desiredAdmin,
-    },
   ];
+
+  if (paraswapAugustusRegistry) {
+    result.push(
+      {
+        role: "ParaSwapRepayAdapter owner",
+        address: await paraswapRepayAdapter!.owner(),
+        assert: (await paraswapRepayAdapter!.owner()) == desiredAdmin,
+      },
+      {
+        role: "ParaSwapSwapAdapter owner",
+        address: await paraswapSwapAdapter!.owner(),
+        assert: (await paraswapSwapAdapter!.owner()) == desiredAdmin,
+      }
+    );
+  }
 
   // Add emission manager check if 3.0.1v
   try {
