@@ -172,52 +172,27 @@ export async function initializeMakeSuite() {
   )) as AaveProtocolDataProvider;
 
   const allTokens = await testEnv.helpersContract.getAllATokens();
-  const aDaiAddress = allTokens.find(
-    (aToken) => aToken.symbol === "aEthDAI"
-  )?.tokenAddress;
-  const aUsdcAddress = allTokens.find(
-    (aToken) => aToken.symbol === "aEthUSDC"
-  )?.tokenAddress;
 
   const aWEthAddress = allTokens.find(
-    (aToken) => aToken.symbol === "aEthWETH"
+    (aToken) => aToken.symbol === "aBaseWETH"
   )?.tokenAddress;
 
   const reservesTokens = await testEnv.helpersContract.getAllReservesTokens();
 
-  const daiAddress = reservesTokens.find(
-    (token) => token.symbol === "DAI"
-  )?.tokenAddress;
-  const {
-    variableDebtTokenAddress: variableDebtDaiAddress,
-    stableDebtTokenAddress: stableDebtDaiAddress,
-  } = await testEnv.helpersContract.getReserveTokensAddresses(daiAddress || "");
-  const usdcAddress = reservesTokens.find(
-    (token) => token.symbol === "USDC"
-  )?.tokenAddress;
-  const aaveAddress = reservesTokens.find(
-    (token) => token.symbol === "AAVE"
-  )?.tokenAddress;
   const wethAddress = reservesTokens.find(
     (token) => token.symbol === "WETH"
   )?.tokenAddress;
 
-  if (!aDaiAddress || !aWEthAddress || !aUsdcAddress) {
-    process.exit(1);
-  }
-  if (!daiAddress || !usdcAddress || !aaveAddress || !wethAddress) {
+  if (!aWEthAddress) {
     process.exit(1);
   }
 
-  testEnv.aDai = await getAToken(aDaiAddress);
-  testEnv.variableDebtDai = await getVariableDebtToken(variableDebtDaiAddress);
-  testEnv.stableDebtDai = await getStableDebtToken(stableDebtDaiAddress);
-  testEnv.aUsdc = await getAToken(aUsdcAddress);
+  if (!wethAddress) {
+    process.exit(1);
+  }
+
   testEnv.aWETH = await getAToken(aWEthAddress);
 
-  testEnv.dai = await getERC20(daiAddress);
-  testEnv.usdc = await getERC20(usdcAddress);
-  testEnv.aave = await getERC20(aaveAddress);
   testEnv.weth = await getWETH(wethAddress);
 
   if (isTestnetMarket(poolConfig)) {

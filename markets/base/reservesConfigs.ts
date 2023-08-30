@@ -5,7 +5,7 @@ import {
   rateStrategyStableOne,
 } from "./rateStrategies";
 
-export const strategyUSDC: IReserveParams = {
+export const strategyUSDbC: IReserveParams = {
   strategy: rateStrategyStableOne,
   baseLTVAsCollateral: "7700",
   liquidationThreshold: "8000",

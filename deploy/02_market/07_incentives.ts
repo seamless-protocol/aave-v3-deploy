@@ -129,17 +129,19 @@ const func: DeployFunction = async function ({
     await emissionManager.setRewardsController(rewardsProxyAddress)
   );
 
-  if (!isLive) {
-    await deploy(INCENTIVES_PULL_REWARDS_STRATEGY_ID, {
-      from: deployer,
-      contract: "PullRewardsTransferStrategy",
-      args: [
-        rewardsProxyAddress,
-        incentivesEmissionManager,
-        incentivesRewardsVault,
-      ],
-      ...COMMON_DEPLOY_PARAMS,
-    });
+  await deploy(INCENTIVES_PULL_REWARDS_STRATEGY_ID, {
+    from: deployer,
+    contract: "PullRewardsTransferStrategy",
+    args: [
+      rewardsProxyAddress,
+      incentivesEmissionManager,
+      incentivesRewardsVault,
+    ],
+    ...COMMON_DEPLOY_PARAMS,
+  });
+
+
+  if (!isLive) {    
     const stakedAaveAddress = isLive
       ? getParamPerNetwork(poolConfig.StkAaveProxy, network)
       : (await deployments.getOrNull(STAKE_AAVE_PROXY))?.address;

@@ -37,7 +37,7 @@ const func: DeployFunction = async function ({
   const network = (
     process.env.FORK ? process.env.FORK : hre.network.name
   ) as eNetwork;
-
+  console.log("Network: ", network);
   console.log("Live network:", !!hre.config.networks[network].live);
 
   if (isProductionMarket(poolConfig)) {
