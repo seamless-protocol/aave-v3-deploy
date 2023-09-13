@@ -204,3 +204,7 @@ export const MULTISIG_ADDRESS: { [key: string]: string } = {
   // Polygon Multisig
   [ePolygonNetwork.polygon]: "0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58",
 };
+
+export const INCENTIVES_REWARDS_VAULT: { [key: string]: string } = {
+  [eBaseNetwork.main]: "0x8c2e298545b2e6B0CD96e40097814dEfBB984C72",
+};

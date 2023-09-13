@@ -1,16 +1,16 @@
-import { loadPoolConfig } from "./../../helpers/market-config-helpers";
-import { POOL_ADMIN } from "./../../helpers/constants";
+import { loadPoolConfig } from "../../helpers/market-config-helpers";
+import { POOL_ADMIN } from "../../helpers/constants";
 import {
-  getAToken,
+  getVariableDebtToken,
   getPoolAddressesProvider,
-} from "./../../helpers/contract-getters";
+} from "../../helpers/contract-getters";
 import {
-  ATOKEN_IMPL_ID,
+  VARIABLE_DEBT_TOKEN_IMPL_ID,
   INCENTIVES_PROXY_ID,
   POOL_ADDRESSES_PROVIDER_ID,
   TREASURY_PROXY_ID,
-} from "./../../helpers/deploy-ids";
-import { getAddressFromJson } from "./../../helpers/utilities/tx";
+} from "../../helpers/deploy-ids";
+import { getAddressFromJson } from "../../helpers/utilities/tx";
 import { getAaveProtocolDataProvider } from "../../helpers/contract-getters";
 import { waitForTx } from "../../helpers/utilities/tx";
 import { getPoolConfiguratorProxy } from "../../helpers/contract-getters";
@@ -20,7 +20,7 @@ import { COMMON_DEPLOY_PARAMS, MARKET_NAME } from "../../helpers/env";
 
 // Returns true if tokens upgraded, false if not
 
-task(`upgrade-atokens`)
+task(`upgrade-variable-debt-tokens`)
   .addParam("revision")
   .setAction(
     async ({ revision }, { deployments, getNamedAccounts, ...hre }) => {
@@ -57,22 +57,22 @@ task(`upgrade-atokens`)
 
       const reserves = await protocolDataProvider.getAllReservesTokens();
 
-      const newAtokenArtifact = await deployments.deploy(ATOKEN_IMPL_ID, {
-        contract: "AToken",
+      const newAtokenArtifact = await deployments.deploy(VARIABLE_DEBT_TOKEN_IMPL_ID, {
+        contract: "VariableDebtToken",
         from: deployer,
         args: [await poolAddressesProvider.getPool()],
         ...COMMON_DEPLOY_PARAMS,
       });
 
       const deployedRevision = await (
-        await (await getAToken(newAtokenArtifact.address)).ATOKEN_REVISION()
+        await (await getVariableDebtToken(newAtokenArtifact.address)).DEBT_TOKEN_REVISION()
       ).toString();
 
       console.log("deployedRevision", deployedRevision, "revision", revision, deployedRevision !== revision)
 
       if (deployedRevision !== revision) {
         console.error(
-          `- Deployed AToken implementation revision ${deployedRevision} does not match expected revision ${revision}`
+          `- Deployed VariableDebtToken implementation revision ${deployedRevision} does not match expected revision ${revision}`
         );
         return false;
       }
@@ -86,29 +86,28 @@ task(`upgrade-atokens`)
 
         const args = {
           asset,
-          treasury,
           incentivesController,
-          name: `Seamless ${normalizedSymbol}`,
-          symbol: `s${normalizedSymbol}`,
+          name: `Seamless Variable Debt ${normalizedSymbol}`,
+          symbol: `variableDebtSeam${normalizedSymbol}`,
           implementation: newAtokenArtifact.address,
           params: [],
         };
 
         if (deployer !== admin) {
-          const calldata = poolConfigurator.interface.encodeFunctionData("updateAToken", [args]);
+          const calldata = poolConfigurator.interface.encodeFunctionData("updateVariableDebtToken", [args]);
           console.warn(
-            `- AToken deployed, execute update from multisig. Args: ${JSON.stringify(args)}, To: ${poolConfigurator.address}, Call data: ${calldata}`
+            `- VariableDebtToken deployed, execute update from multisig. Args: ${JSON.stringify(args)}, To: ${poolConfigurator.address}, Call data: ${calldata}`
           );
           continue;
         }
 
         try {
           await waitForTx(
-            await poolConfigurator.updateAToken(args)
+            await poolConfigurator.updateVariableDebtToken(args)
           );
-          console.log(`  - Updated implementation of a${normalizedSymbol}`);
+          console.log(`  - Updated implementation of variableDebtSeam${normalizedSymbol}`);
         } catch (e) {
-          console.error("failed to updateAToken skipping. Error: ", e);
+          console.error("failed to updateVariableDebtToken skipping. Error: ", e);
           throw e;
         }
       }
