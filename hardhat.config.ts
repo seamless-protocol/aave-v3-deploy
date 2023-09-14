@@ -207,5 +207,23 @@ export default {
     : undefined,
   etherscan: {
     apiKey: ETHERSCAN_KEY,
+    customChains: [
+      {
+        network: "base",
+        chainId: 8453,
+        urls: {
+          apiURL: "https://api.basescan.org/api",
+          browserURL: "https://basescan.org"
+        }
+      },
+      {
+        network: "base-testnet",
+        chainId: 84531,
+        urls: {
+          apiURL: "https://api-goerli.basescan.org/api",
+          browserURL: "https://goerli.basescan.org/"
+        }
+      }
+    ]
   },
 };

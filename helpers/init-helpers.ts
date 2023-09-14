@@ -189,12 +189,12 @@ export const initReservesByHelper = async (
       treasury: treasuryAddress,
       incentivesController,
       underlyingAssetName: reserveSymbols[i],
-      aTokenName: `Aave ${aTokenNamePrefix} ${reserveSymbols[i]}`,
-      aTokenSymbol: `a${symbolPrefix}${reserveSymbols[i]}`,
-      variableDebtTokenName: `Aave ${variableDebtTokenNamePrefix} Variable Debt ${reserveSymbols[i]}`,
-      variableDebtTokenSymbol: `variableDebt${symbolPrefix}${reserveSymbols[i]}`,
-      stableDebtTokenName: `Aave ${stableDebtTokenNamePrefix} Stable Debt ${reserveSymbols[i]}`,
-      stableDebtTokenSymbol: `stableDebt${symbolPrefix}${reserveSymbols[i]}`,
+      aTokenName: `Seamless ${reserveSymbols[i]}`,
+      aTokenSymbol: `s${reserveSymbols[i]}`,
+      variableDebtTokenName: `Seamless Variable Debt ${reserveSymbols[i]}`,
+      variableDebtTokenSymbol: `variableDebtSeam${reserveSymbols[i]}`,
+      stableDebtTokenName: `Seamless Stable Debt ${reserveSymbols[i]}`,
+      stableDebtTokenSymbol: `stableDebtSeam${reserveSymbols[i]}`,
       params: "0x10",
     });
   }

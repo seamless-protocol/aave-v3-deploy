@@ -14,21 +14,21 @@ export const BaseConfig: IAaveConfiguration = {
   ...AaveMarket,
   ProviderId: 30,
   MarketId: "Base Seamless Market",
-  ATokenNamePrefix: "Base",
-  StableDebtTokenNamePrefix: "Base",
-  VariableDebtTokenNamePrefix: "Base",
-  SymbolPrefix: "Base",
+  ATokenNamePrefix: "",
+  StableDebtTokenNamePrefix: "",
+  VariableDebtTokenNamePrefix: "",
+  SymbolPrefix: "",
   ReservesConfig: {
-    USDBC: strategyUSDbC,
+    USDbC: strategyUSDbC,
     WETH: strategyWETH,
   },
   ReserveAssets: {
     [eBaseNetwork.main]: {
-      USDBC: "0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA",
+      USDbC: "0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA",
       WETH: "0x4200000000000000000000000000000000000006",
     },
     [eBaseNetwork.testnet]: {
-      USDBC: ZERO_ADDRESS,
+      USDbC: ZERO_ADDRESS,
       WETH: ZERO_ADDRESS,
     },
   },
@@ -39,11 +39,11 @@ export const BaseConfig: IAaveConfiguration = {
     },
     rewards: {
       [eBaseNetwork.main]: {
-        SEAM: "0x5607718c64334eb5174CB2226af891a6ED82c7C6", // TODO
+        SEAM: "0x5607718c64334eb5174CB2226af891a6ED82c7C6",
       },
       [eBaseNetwork.testnet]: {
         SEAM: "0x980d0cbb2e314c496b808cac88a8a4e8893161e1",
-        USDBC: ZERO_ADDRESS,
+        USDbC: ZERO_ADDRESS,
       },
     },
     rewardsOracle: {},
@@ -62,7 +62,7 @@ export const BaseConfig: IAaveConfiguration = {
         {
           emissionPerSecond: "240000000000000000",
           duration: 2592000,
-          asset: "USDBC",
+          asset: "USDbc",
           assetType: AssetType.VariableDebtToken,
           reward: "SEAM",
           rewardOracle: "0",
@@ -87,7 +87,7 @@ export const BaseConfig: IAaveConfiguration = {
   EModes: {},
   ChainlinkAggregator: {
     [eBaseNetwork.main]: {
-      USDBC: "0x7e860098F58bBFC8648a4311b374B1D669a2bc6B",
+      USDbC: "0x7e860098F58bBFC8648a4311b374B1D669a2bc6B",
       WETH: "0x71041dddad3595F9CEd3DcCFBe3D1F4b0a16Bb70",
     },
   },

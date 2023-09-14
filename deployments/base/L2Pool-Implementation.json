@@ -1945,6 +1945,7 @@
     "BorrowLogic": "0xAC0b0dD4086Df59b966EC4d71235F249DeF3F70A",
     "BridgeLogic": "0x1d9eCa99A4b4Ab73fA1181f617107C66E1D44551",
     "PoolLogic": "0xe51329660D86b116b77f8af76DD0fF04E3309805",
+    "ConfiguratorLogic": "0x5D6fCde71293286CCD4418BbbA444f2d67F17895",
     "CalldataLogic": "0x2182b918f29ee7D621128dde8Dc07eFAa5FE8d2e"
   },
   "devdoc": {
