@@ -26,6 +26,7 @@ import "hardhat-dependency-compiler";
 import "@nomicfoundation/hardhat-chai-matchers";
 
 const SKIP_LOAD = process.env.SKIP_LOAD === "true";
+const NEXT_PUBLIC_FORK_CHAIN_ID = parseInt(<string>process.env.NEXT_PUBLIC_FORK_CHAIN_ID, 10) || 8453;
 const TASK_FOLDERS = ["misc", "market-registry"];
 
 // Prevent to load tasks before compilation and typechain
@@ -115,6 +116,7 @@ export default {
       84531
     ),
     [eBaseNetwork.main]: getCommonNetworkConfig(eBaseNetwork.main, 8453),
+    [eBaseNetwork.tenderly]: getCommonNetworkConfig(eBaseNetwork.tenderly, NEXT_PUBLIC_FORK_CHAIN_ID),
     [eEthereumNetwork.goerli]: getCommonNetworkConfig(
       eEthereumNetwork.goerli,
       5

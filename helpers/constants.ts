@@ -44,6 +44,7 @@ export const WRAPPED_NATIVE_TOKEN_PER_NETWORK: { [network: string]: string } = {
   [eOptimismNetwork.main]: "0x4200000000000000000000000000000000000006",
   [eBaseNetwork.main]: "0x4200000000000000000000000000000000000006",
   [eBaseNetwork.testnet]: "0x4200000000000000000000000000000000000006",
+  [eBaseNetwork.tenderly]: "0x4200000000000000000000000000000000000006",
   [eAvalancheNetwork.avalanche]: "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
   [eFantomNetwork.main]: "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
   [eHarmonyNetwork.main]: "0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a",
@@ -97,6 +98,7 @@ export const chainlinkAggregatorProxy: Record<string, string> = {
   optimism: "0xA969bEB73d918f6100163Cd0fba3C586C269bee1",
   base: "0x71041dddad3595F9CEd3DcCFBe3D1F4b0a16Bb70",
   "base-testnet": "0xcD2A119bD1F7DF95d706DE6F2057fDD45A0503E2",
+  [eBaseNetwork.tenderly]: "0x71041dddad3595F9CEd3DcCFBe3D1F4b0a16Bb70",
   fantom: "0xf4766552D15AE4d256Ad41B6cf2933482B0680dc",
   "harmony-testnet": "0xcEe686F89bc0dABAd95AEAAC980aE1d97A075FAD",
   "optimism-testnet": "0xEFFC18fC3b7eb8E676dac549E0c693ad50D1Ce31",
@@ -122,6 +124,7 @@ export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
   optimism: "0xA969bEB73d918f6100163Cd0fba3C586C269bee1",
   base: "0x71041dddad3595F9CEd3DcCFBe3D1F4b0a16Bb70",
   "base-testnet": "0xcD2A119bD1F7DF95d706DE6F2057fDD45A0503E2",
+  [eBaseNetwork.tenderly]: "0x71041dddad3595F9CEd3DcCFBe3D1F4b0a16Bb70",
   fantom: "0x11DdD3d147E5b83D01cee7070027092397d63658",
   "harmony-testnet": "0x4f11696cE92D78165E1F8A9a4192444087a45b64",
   "optimism-testnet": "0xEFFC18fC3b7eb8E676dac549E0c693ad50D1Ce31",
@@ -145,6 +148,7 @@ export const POOL_ADMIN: Record<string, string> = {
   [eHarmonyNetwork.main]: "0xb2f0C5f37f4beD2cB51C44653cD5D84866BDcd2D",
   [eOptimismNetwork.main]: "0xE50c8C619d05ff98b22Adf991F17602C774F785c",
   [eBaseNetwork.main]: "0xA1b5f2cc9B407177CD8a4ACF1699fa0b99955A22",
+  [eBaseNetwork.tenderly]: "0xA1b5f2cc9B407177CD8a4ACF1699fa0b99955A22",
   [ePolygonNetwork.polygon]: "0xdc9A35B16DB4e126cFeDC41322b3a36454B1F772",
   [eEthereumNetwork.main]: ETHEREUM_SHORT_EXECUTOR,
 };
@@ -156,6 +160,7 @@ export const EMERGENCY_ADMIN: Record<string, string> = {
   [eHarmonyNetwork.main]: "0xb2f0C5f37f4beD2cB51C44653cD5D84866BDcd2D",
   [eOptimismNetwork.main]: "0xE50c8C619d05ff98b22Adf991F17602C774F785c",
   [eBaseNetwork.main]: "0xA1b5f2cc9B407177CD8a4ACF1699fa0b99955A22",
+  [eBaseNetwork.tenderly]: "0xA1b5f2cc9B407177CD8a4ACF1699fa0b99955A22",
   [ePolygonNetwork.polygon]: "0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58",
   [eEthereumNetwork.main]: ETHEREUM_SHORT_EXECUTOR,
 };
@@ -201,10 +206,12 @@ export const MULTISIG_ADDRESS: { [key: string]: string } = {
   [eHarmonyNetwork.main]: "0xb2f0C5f37f4beD2cB51C44653cD5D84866BDcd2D",
   [eOptimismNetwork.main]: "0xE50c8C619d05ff98b22Adf991F17602C774F785c",
   [eBaseNetwork.main]: "0xA1b5f2cc9B407177CD8a4ACF1699fa0b99955A22",
+  [eBaseNetwork.tenderly]: "0xA1b5f2cc9B407177CD8a4ACF1699fa0b99955A22",
   // Polygon Multisig
   [ePolygonNetwork.polygon]: "0x1450F2898D6bA2710C98BE9CAF3041330eD5ae58",
 };
 
 export const INCENTIVES_REWARDS_VAULT: { [key: string]: string } = {
   [eBaseNetwork.main]: "0x8c2e298545b2e6B0CD96e40097814dEfBB984C72",
+  [eBaseNetwork.tenderly]: "0x8c2e298545b2e6B0CD96e40097814dEfBB984C72",
 };

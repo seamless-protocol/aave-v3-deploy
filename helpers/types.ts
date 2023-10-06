@@ -35,6 +35,7 @@ export enum eOptimismNetwork {
 export enum eBaseNetwork {
   main = "base",
   testnet = "base-testnet",
+  tenderly = "base-tenderly",
 }
 
 export enum eEthereumNetwork {
