@@ -4,6 +4,7 @@ import { IInterestRateStrategyParams } from "../../helpers/types";
 import {
   getPoolAddressesProvider,
 } from "../../helpers/contract-getters";
+import { COMMON_DEPLOY_PARAMS }  from "../../helpers/env"
 
 /*
   Example command:
@@ -95,10 +96,8 @@ task(`deploy-interest-rate-strategy`)
           from: deployer,
           args: deployArgs,
           contract: "DefaultReserveInterestRateStrategy",
-          log: true,
-          deterministicDeployment: hre.ethers.utils.formatBytes32String(
-            rateStrategy.name
-          ),
+          log: COMMON_DEPLOY_PARAMS.log,
+          deterministicDeployment: COMMON_DEPLOY_PARAMS.deterministicDeployment,
         }
       );
       console.log(
