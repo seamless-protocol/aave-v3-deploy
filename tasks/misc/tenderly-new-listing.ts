@@ -129,7 +129,6 @@ task(`tenderly-new-listing`)
         const treasuryAddress = await getTreasuryAddress(poolConfig, hre.network.name as eNetwork);
         const incentivesController = await deployments.get("IncentivesProxy");
 
-        // TODO: support for delegation aware atokens: reference helpers/init-helpers.ts?
         const aTokenImplementationAddress = (await deployments.get(ATOKEN_IMPL_ID)).address;
         const stableDebtTokenImplementationAddress = (await deployments.get(STABLE_DEBT_TOKEN_IMPL_ID)).address;
         const variableDebtTokenImplementationAddress = await (await deployments.get(VARIABLE_DEBT_TOKEN_IMPL_ID)).address;
@@ -259,9 +258,6 @@ task(`tenderly-new-listing`)
           const aaveOracle = (await getAaveOracle()).connect(seamlessMultisigSigner);
           await waitForTx(await aaveOracle.setAssetSources([underlying], [chainlinkoracle]));
           console.log(`  - Configured Chainlink oracle for ${symbol} to ${chainlinkoracle}`)
-
-          // TODO: emissions setup via separate task or use `tasks/misc/setup-rewards-incentives.ts`
-          // TODO: emode setup via separate task or use `tasks/misc/setup-e-modes.ts`
         } else {
           console.log(
             `- Reserve ${symbol} at ${underlying} is already enabled as collateral, skipping`

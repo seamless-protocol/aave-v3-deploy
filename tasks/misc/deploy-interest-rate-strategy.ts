@@ -8,7 +8,7 @@ import {
 /*
   Example command:
 
-  HARDHAT_NETWORK=base-tenderly npx hardhat deploy-interest-rate-stretegy \
+  HARDHAT_NETWORK=base-tenderly npx hardhat deploy-interest-rate-strategy \
     --name testInterestRateStrategy \
     --optimalusageratio 0.9 \
     --basevariableborrowrate 0 \
@@ -21,7 +21,7 @@ import {
     --optimalstabletototaldebtratio 0.2
  */
 
-task(`deploy-interest-rate-stretegy`)
+task(`deploy-interest-rate-strategy`)
   .addParam("name")
   .addParam("optimalusageratio") // percent as decimal
   .addParam("basevariableborrowrate") // percent as decimal
