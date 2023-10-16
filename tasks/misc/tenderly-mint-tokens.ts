@@ -5,7 +5,7 @@ import { MULTISIG_ADDRESS } from "../../helpers";
 import { type HttpNetworkUserConfig } from "hardhat/types";
 
 /**
-  HARDHAT_NETWORK=base-tenderly npx hardhat tenderly-mint-token \
+  HARDHAT_NETWORK=base npx hardhat tenderly-mint-token \
     --admin 0x4200000000000000000000000000000000000010 \
     --token 0x2Ae3F1Ec7F1F5012CFEab0185bfc7aa3cf0DEc22 \
     --recipient 0x0 \
@@ -27,7 +27,7 @@ task(`tenderly-mint-token`)
         amount: string, 
       }, hre
     ) => {
-      if (hre.network.name && hre.network.name.toLowerCase() === "base-tenderly") {
+      if (hre.network.name && hre.network.name.toLowerCase() === "base") {
         const config = hre.network.config as HttpNetworkUserConfig;
 
         if (config.url !== undefined) {
@@ -39,7 +39,7 @@ task(`tenderly-mint-token`)
         console.log("  - Using signer:", await adminSigner.getAddress());
         await waitForTx(await Minter.connect(adminSigner).mint(recipient, amount));
       } else {
-        console.log("  - Task only for tenderly networks");
+        console.log("  - Task only for base tenderly forks");
       }
     }
   );

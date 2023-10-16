@@ -43,11 +43,11 @@ import { ZERO_ADDRESS, MULTISIG_ADDRESS } from "../../helpers/constants";
 /**
   Example command:
   
-  HARDHAT_NETWORK=base-tenderly npx hardhat tenderly-new-listing \
+  HARDHAT_NETWORK=base npx hardhat tenderly-new-listing \
     --underlying 0x2Ae3F1Ec7F1F5012CFEab0185bfc7aa3cf0DEc22 \
     --symbol cbETH \
     --decimals 18 \
-    --strategy 0xbc5D91f0688150886043308cC4fe15a712268593 \
+    --strategy 0xB7f8BC63BbcaD18155201308C8f3540b07f84F5e \
     --baseltv 6700 \
     --liquidationthreshold 7400 \
     --liquidationbonus 10750 \
@@ -93,7 +93,7 @@ task(`tenderly-new-listing`)
     ) => {
       const accounts = await hre.ethers.getSigners();
       const seamlessMultisig = MULTISIG_ADDRESS[hre.network.name];
-      if (hre.network.name && hre.network.name.toLowerCase() === "base-tenderly") {
+      if (hre.network.name && hre.network.name.toLowerCase() === "base") {
         const config = hre.network.config as HttpNetworkUserConfig;
 
         if (config.url !== undefined) {
@@ -264,7 +264,7 @@ task(`tenderly-new-listing`)
           );
         }
       } else {
-        console.log("  - Task only for tenderly networks");
+        console.log("  - Task only for base tenderly forks");
       }
     }
   );

@@ -28,6 +28,7 @@ export const FORK_BLOCK_NUMBER = process.env.FORK_BLOCK_NUMBER
   : 0;
 const MNEMONIC_PATH = "m/44'/60'/0'/0";
 const MNEMONIC = process.env.MNEMONIC || "";
+const BASE_RPC_URL = process.env.TENDERLY_FORK === 'true' ? `https://rpc.tenderly.co/fork/${TENDERLY_FORK_ID}` : `https://base.gateway.tenderly.co/${TENDERLY_PROJECT_ID}`;
 
 export const getAlchemyKey = (net: eNetwork) => {
   switch (net) {
@@ -86,9 +87,8 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
   [eOptimismNetwork.testnet]: `https://opt-goerli.g.alchemy.com/v2/demo`,
   [eOptimismNetwork.main]: `https://mainnet.optimism.io`,
   [eBaseNetwork.testnet]: `https://base-goerli.gateway.tenderly.co/${TENDERLY_PROJECT_ID}`,
-  [eBaseNetwork.main]: `https://base.gateway.tenderly.co/${TENDERLY_PROJECT_ID}`, // `https://rpc.tenderly.co/fork/${TENDERLY_FORK_ID}`,
   tenderly: `https://rpc.tenderly.co/fork/${TENDERLY_FORK_ID}`,
-  [eBaseNetwork.tenderly]: `https://rpc.tenderly.co/fork/${TENDERLY_FORK_ID}`,
+  [eBaseNetwork.main]: BASE_RPC_URL,
   [eEthereumNetwork.goerli]: `https://eth-goerli.alchemyapi.io/v2/${getAlchemyKey(
     eEthereumNetwork.goerli
   )}`,

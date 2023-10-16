@@ -23,7 +23,7 @@ import {
 import { RewardsDataTypes } from "../../typechain/@aave/periphery-v3/contracts/rewards/RewardsController";
 
 /**
-  HARDHAT_NETWORK=base-tenderly npx hardhat tenderly-set-emissions \
+  HARDHAT_NETWORK=base npx hardhat tenderly-set-emissions \
     --transferstrategy 0 \
     --assettype 1 \
     --underlying 0x2Ae3F1Ec7F1F5012CFEab0185bfc7aa3cf0DEc22 \
@@ -52,7 +52,7 @@ task(`tenderly-set-emissions`)
       }, hre
     ) => {
       const seamlessMultisig = MULTISIG_ADDRESS[hre.network.name];
-      if (hre.network.name && hre.network.name.toLowerCase() === "base-tenderly") {
+      if (hre.network.name && hre.network.name.toLowerCase() === "base") {
         const hre_config = hre.network.config as HttpNetworkUserConfig;
 
         if (hre_config.url !== undefined) {
@@ -132,7 +132,7 @@ task(`tenderly-set-emissions`)
           );
         }
       } else {
-        console.log("  - Task only for tenderly networks");
+        console.log("  - Task only for base tenderly forks");
       }
     }
   );

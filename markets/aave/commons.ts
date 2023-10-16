@@ -164,7 +164,6 @@ export const CommonsConfig: ICommonConfiguration = {
     [eOptimismNetwork.testnet]: true,
     [eBaseNetwork.main]: true,
     [eBaseNetwork.testnet]: true,
-    [eBaseNetwork.tenderly]: true,
   },
   ParaswapRegistry: {
     [eEthereumNetwork.main]: "0xa68bEA62Dc4034A689AA0F58A76681433caCa663",

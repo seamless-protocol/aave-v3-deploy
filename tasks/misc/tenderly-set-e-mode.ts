@@ -7,7 +7,7 @@ import { type HttpNetworkUserConfig } from "hardhat/types";
 /**
   Example command: cbETH <> WETH in same category, using cbETH/ETH oracle
   
-  HARDHAT_NETWORK=base-tenderly npx hardhat tenderly-set-e-mode \
+  HARDHAT_NETWORK=base npx hardhat tenderly-set-e-mode \
     --oracle 0x806b4ac04501c29769051e42783cf04dce41440b \
     --categoryid 1 \
     --ltv 9000 \
@@ -39,7 +39,7 @@ task(`tenderly-set-e-mode`, `Setups e-mode category and assets`)
       }, hre
     ) => {
       const seamlessMultisig = MULTISIG_ADDRESS[hre.network.name];
-      if (hre.network.name && hre.network.name.toLowerCase() === "base-tenderly") {
+      if (hre.network.name && hre.network.name.toLowerCase() === "base") {
         const config = hre.network.config as HttpNetworkUserConfig;
 
         if (config.url !== undefined) {
@@ -80,7 +80,7 @@ task(`tenderly-set-e-mode`, `Setups e-mode category and assets`)
           console.log("  - Added", assetAddress, "asset to E-Mode", label);
         }
       } else {
-        console.log("  - Task only for tenderly networks");
+        console.log("  - Task only for base tenderly forks");
       }
     }
   );

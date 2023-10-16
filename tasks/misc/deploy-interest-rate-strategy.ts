@@ -9,7 +9,7 @@ import { COMMON_DEPLOY_PARAMS }  from "../../helpers/env"
 /*
   Example command:
 
-  HARDHAT_NETWORK=base-tenderly npx hardhat deploy-interest-rate-strategy \
+  HARDHAT_NETWORK=base npx hardhat deploy-interest-rate-strategy \
     --name testInterestRateStrategy \
     --optimalusageratio 0.9 \
     --basevariableborrowrate 0 \
