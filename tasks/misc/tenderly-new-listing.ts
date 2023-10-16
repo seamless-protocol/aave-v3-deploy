@@ -168,7 +168,7 @@ task(`tenderly-new-listing`)
           variableDebtTokenSymbol: `variableDebtSeam${symbol}`,
           stableDebtTokenName: `Seamless Stable Debt ${symbol}`,
           stableDebtTokenSymbol: `stableDebtSeam${symbol}`,
-          params: "0x10", // TODO: revisit `params` argument
+          params: "0x10", // unused, only on emit Initialized event
         });
 
         const addressProviderArtifact = await deployments.get(
