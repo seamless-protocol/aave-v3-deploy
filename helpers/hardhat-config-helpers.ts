@@ -86,8 +86,8 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
   [eOptimismNetwork.testnet]: `https://opt-goerli.g.alchemy.com/v2/demo`,
   [eOptimismNetwork.main]: `https://mainnet.optimism.io`,
   [eBaseNetwork.testnet]: `https://base-goerli.gateway.tenderly.co/${TENDERLY_PROJECT_ID}`,
-  [eBaseNetwork.main]: `https://base.gateway.tenderly.co/${TENDERLY_PROJECT_ID}`, // `https://rpc.tenderly.co/fork/${TENDERLY_FORK_ID}`,
   tenderly: `https://rpc.tenderly.co/fork/${TENDERLY_FORK_ID}`,
+  [eBaseNetwork.main]: `https://base.gateway.tenderly.co/${TENDERLY_PROJECT_ID}`,
   [eEthereumNetwork.goerli]: `https://eth-goerli.alchemyapi.io/v2/${getAlchemyKey(
     eEthereumNetwork.goerli
   )}`,
@@ -141,7 +141,7 @@ export const getCommonNetworkConfig = (
   networkName: eNetwork,
   chainId?: number
 ) => ({
-  url: NETWORKS_RPC_URL[networkName] || "",
+  url: process.env.TENDERLY_FORK === 'true' ? `https://rpc.tenderly.co/fork/${TENDERLY_FORK_ID}` : (NETWORKS_RPC_URL[networkName] || ""),
   blockGasLimit: DEFAULT_BLOCK_GAS_LIMIT,
   chainId,
   gasPrice: GAS_PRICE_PER_NET[networkName] || undefined,
