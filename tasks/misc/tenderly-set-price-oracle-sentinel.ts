@@ -4,7 +4,6 @@ import {
   POOL_ADDRESSES_PROVIDER_ID,
   PRICE_ORACLE_SENTINEL_ID,
 } from "../../helpers/deploy-ids";
-import { COMMON_DEPLOY_PARAMS } from "../../helpers/env";
 import {
   PoolAddressesProvider,
 } from "../../typechain";

@@ -1,15 +1,9 @@
 import { task } from "hardhat/config";
-import { waitForTx } from "../../helpers/utilities/tx";
 import {
   POOL_ADDRESSES_PROVIDER_ID,
   PRICE_ORACLE_SENTINEL_ID,
 } from "../../helpers/deploy-ids";
 import { COMMON_DEPLOY_PARAMS } from "../../helpers/env";
-import {
-  PoolAddressesProvider,
-} from "../../typechain";
-import { MULTISIG_ADDRESS } from "../../helpers/constants";
-import { type HttpNetworkUserConfig } from "hardhat/types";
 
 /*
   Example command:
