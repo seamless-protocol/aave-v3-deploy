@@ -22,6 +22,7 @@ export const INCENTIVES_PULL_REWARDS_STRATEGY_ID = `PullRewardsTransferStrategy`
 export const INCENTIVES_STAKED_TOKEN_STRATEGY_ID = `StakedTokenTransferStrategy`;
 export const ORACLE_ID = `AaveOracle-${MARKET_NAME}`;
 export const FALLBACK_ORACLE_ID = `FallbackOracle-${MARKET_NAME}`;
+export const PRICE_ORACLE_SENTINEL_ID = `PriceOracleSentinel-${MARKET_NAME}`;
 export const TREASURY_PROXY_ID = "TreasuryProxy";
 export const TREASURY_IMPL_ID = `Treasury-${IMPL_ID}`;
 export const TREASURY_CONTROLLER_ID = `Treasury-Controller`;
