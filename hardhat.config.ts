@@ -138,6 +138,7 @@ export default {
     paths: [
       "@aave/core-v3/contracts/protocol/configuration/PoolAddressesProviderRegistry.sol",
       "@aave/core-v3/contracts/protocol/configuration/PoolAddressesProvider.sol",
+      "@aave/core-v3/contracts/protocol/configuration/PriceOracleSentinel.sol",
       "@aave/core-v3/contracts/misc/AaveOracle.sol",
       "@aave/core-v3/contracts/protocol/tokenization/AToken.sol",
       "@aave/core-v3/contracts/protocol/tokenization/DelegationAwareAToken.sol",
