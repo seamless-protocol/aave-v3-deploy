@@ -1,0 +1,286 @@
+{
+  "address": "0xD228edaA3BD33D604f5561e187782aD9D5B65571",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract IPoolAddressesProvider",
+          "name": "provider",
+          "type": "address"
+        },
+        {
+          "internalType": "contract ISequencerOracle",
+          "name": "oracle",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "gracePeriod",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newGracePeriod",
+          "type": "uint256"
+        }
+      ],
+      "name": "GracePeriodUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "newSequencerOracle",
+          "type": "address"
+        }
+      ],
+      "name": "SequencerOracleUpdated",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "ADDRESSES_PROVIDER",
+      "outputs": [
+        {
+          "internalType": "contract IPoolAddressesProvider",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getGracePeriod",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getSequencerOracle",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "isBorrowAllowed",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "isLiquidationAllowed",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "newGracePeriod",
+          "type": "uint256"
+        }
+      ],
+      "name": "setGracePeriod",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newSequencerOracle",
+          "type": "address"
+        }
+      ],
+      "name": "setSequencerOracle",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x97a23a8f7f98c33a95eff5c211540304003c2a2ab9156b3f8fa30ed9793d5abb",
+  "receipt": {
+    "to": null,
+    "from": "0x33EB4dEa4931e5d607531Fb08Bd393944aA01Faa",
+    "contractAddress": "0xD228edaA3BD33D604f5561e187782aD9D5B65571",
+    "transactionIndex": 2,
+    "gasUsed": "564897",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xf0ede0fc49eaad609b273ab0ee6b8d14064107d287707386a987ff62e811fa0e",
+    "transactionHash": "0x97a23a8f7f98c33a95eff5c211540304003c2a2ab9156b3f8fa30ed9793d5abb",
+    "logs": [],
+    "blockNumber": 5740933,
+    "cumulativeGasUsed": "663501",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x0E02EB705be325407707662C6f6d3466E939f3a0",
+    "0xBCF85224fc0756B9Fa45aA7892530B47e10b6433",
+    "3600"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "39658f7febb9108c692bcbf1d9d7109c",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract IPoolAddressesProvider\",\"name\":\"provider\",\"type\":\"address\"},{\"internalType\":\"contract ISequencerOracle\",\"name\":\"oracle\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"gracePeriod\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newGracePeriod\",\"type\":\"uint256\"}],\"name\":\"GracePeriodUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newSequencerOracle\",\"type\":\"address\"}],\"name\":\"SequencerOracleUpdated\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"ADDRESSES_PROVIDER\",\"outputs\":[{\"internalType\":\"contract IPoolAddressesProvider\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getGracePeriod\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getSequencerOracle\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"isBorrowAllowed\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"isLiquidationAllowed\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"newGracePeriod\",\"type\":\"uint256\"}],\"name\":\"setGracePeriod\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newSequencerOracle\",\"type\":\"address\"}],\"name\":\"setSequencerOracle\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Aave\",\"details\":\"Once the PriceOracle gets up after an outage/downtime, users can make their positions healthy during a grace  period. So the PriceOracle is considered completely up once its up and the grace period passed.\",\"kind\":\"dev\",\"methods\":{\"constructor\":{\"details\":\"Constructor\",\"params\":{\"gracePeriod\":\"The duration of the grace period in seconds\",\"oracle\":\"The address of the SequencerOracle\",\"provider\":\"The address of the PoolAddressesProvider\"}},\"getGracePeriod()\":{\"returns\":{\"_0\":\"The duration of the grace period\"}},\"getSequencerOracle()\":{\"returns\":{\"_0\":\"The address of the sequencer oracle contract\"}},\"isBorrowAllowed()\":{\"details\":\"Operation not allowed when PriceOracle is down or grace period not passed.\",\"returns\":{\"_0\":\"True if the `borrow` operation is allowed, false otherwise.\"}},\"isLiquidationAllowed()\":{\"details\":\"Operation not allowed when PriceOracle is down or grace period not passed.\",\"returns\":{\"_0\":\"True if the `liquidation` operation is allowed, false otherwise.\"}},\"setGracePeriod(uint256)\":{\"params\":{\"newGracePeriod\":\"The value of the new grace period duration\"}},\"setSequencerOracle(address)\":{\"params\":{\"newSequencerOracle\":\"The address of the new Sequencer Oracle to use\"}}},\"stateVariables\":{\"ADDRESSES_PROVIDER\":{\"return\":\"The address of the PoolAddressesProvider contract\",\"returns\":{\"_0\":\"The address of the PoolAddressesProvider contract\"}}},\"title\":\"PriceOracleSentinel\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"ADDRESSES_PROVIDER()\":{\"notice\":\"Returns the PoolAddressesProvider\"},\"getGracePeriod()\":{\"notice\":\"Returns the grace period\"},\"getSequencerOracle()\":{\"notice\":\"Returns the SequencerOracle\"},\"isBorrowAllowed()\":{\"notice\":\"Returns true if the `borrow` operation is allowed.\"},\"isLiquidationAllowed()\":{\"notice\":\"Returns true if the `liquidation` operation is allowed.\"},\"setGracePeriod(uint256)\":{\"notice\":\"Updates the duration of the grace period\"},\"setSequencerOracle(address)\":{\"notice\":\"Updates the address of the sequencer oracle\"}},\"notice\":\"It validates if operations are allowed depending on the PriceOracle health.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"@aave/core-v3/contracts/protocol/configuration/PriceOracleSentinel.sol\":\"PriceOracleSentinel\"},\"evmVersion\":\"berlin\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":100000},\"remappings\":[]},\"sources\":{\"@aave/core-v3/contracts/interfaces/IACLManager.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0\\npragma solidity ^0.8.0;\\n\\nimport {IPoolAddressesProvider} from './IPoolAddressesProvider.sol';\\n\\n/**\\n * @title IACLManager\\n * @author Aave\\n * @notice Defines the basic interface for the ACL Manager\\n */\\ninterface IACLManager {\\n  /**\\n   * @notice Returns the contract address of the PoolAddressesProvider\\n   * @return The address of the PoolAddressesProvider\\n   */\\n  function ADDRESSES_PROVIDER() external view returns (IPoolAddressesProvider);\\n\\n  /**\\n   * @notice Returns the identifier of the PoolAdmin role\\n   * @return The id of the PoolAdmin role\\n   */\\n  function POOL_ADMIN_ROLE() external view returns (bytes32);\\n\\n  /**\\n   * @notice Returns the identifier of the EmergencyAdmin role\\n   * @return The id of the EmergencyAdmin role\\n   */\\n  function EMERGENCY_ADMIN_ROLE() external view returns (bytes32);\\n\\n  /**\\n   * @notice Returns the identifier of the RiskAdmin role\\n   * @return The id of the RiskAdmin role\\n   */\\n  function RISK_ADMIN_ROLE() external view returns (bytes32);\\n\\n  /**\\n   * @notice Returns the identifier of the FlashBorrower role\\n   * @return The id of the FlashBorrower role\\n   */\\n  function FLASH_BORROWER_ROLE() external view returns (bytes32);\\n\\n  /**\\n   * @notice Returns the identifier of the Bridge role\\n   * @return The id of the Bridge role\\n   */\\n  function BRIDGE_ROLE() external view returns (bytes32);\\n\\n  /**\\n   * @notice Returns the identifier of the AssetListingAdmin role\\n   * @return The id of the AssetListingAdmin role\\n   */\\n  function ASSET_LISTING_ADMIN_ROLE() external view returns (bytes32);\\n\\n  /**\\n   * @notice Set the role as admin of a specific role.\\n   * @dev By default the admin role for all roles is `DEFAULT_ADMIN_ROLE`.\\n   * @param role The role to be managed by the admin role\\n   * @param adminRole The admin role\\n   */\\n  function setRoleAdmin(bytes32 role, bytes32 adminRole) external;\\n\\n  /**\\n   * @notice Adds a new admin as PoolAdmin\\n   * @param admin The address of the new admin\\n   */\\n  function addPoolAdmin(address admin) external;\\n\\n  /**\\n   * @notice Removes an admin as PoolAdmin\\n   * @param admin The address of the admin to remove\\n   */\\n  function removePoolAdmin(address admin) external;\\n\\n  /**\\n   * @notice Returns true if the address is PoolAdmin, false otherwise\\n   * @param admin The address to check\\n   * @return True if the given address is PoolAdmin, false otherwise\\n   */\\n  function isPoolAdmin(address admin) external view returns (bool);\\n\\n  /**\\n   * @notice Adds a new admin as EmergencyAdmin\\n   * @param admin The address of the new admin\\n   */\\n  function addEmergencyAdmin(address admin) external;\\n\\n  /**\\n   * @notice Removes an admin as EmergencyAdmin\\n   * @param admin The address of the admin to remove\\n   */\\n  function removeEmergencyAdmin(address admin) external;\\n\\n  /**\\n   * @notice Returns true if the address is EmergencyAdmin, false otherwise\\n   * @param admin The address to check\\n   * @return True if the given address is EmergencyAdmin, false otherwise\\n   */\\n  function isEmergencyAdmin(address admin) external view returns (bool);\\n\\n  /**\\n   * @notice Adds a new admin as RiskAdmin\\n   * @param admin The address of the new admin\\n   */\\n  function addRiskAdmin(address admin) external;\\n\\n  /**\\n   * @notice Removes an admin as RiskAdmin\\n   * @param admin The address of the admin to remove\\n   */\\n  function removeRiskAdmin(address admin) external;\\n\\n  /**\\n   * @notice Returns true if the address is RiskAdmin, false otherwise\\n   * @param admin The address to check\\n   * @return True if the given address is RiskAdmin, false otherwise\\n   */\\n  function isRiskAdmin(address admin) external view returns (bool);\\n\\n  /**\\n   * @notice Adds a new address as FlashBorrower\\n   * @param borrower The address of the new FlashBorrower\\n   */\\n  function addFlashBorrower(address borrower) external;\\n\\n  /**\\n   * @notice Removes an address as FlashBorrower\\n   * @param borrower The address of the FlashBorrower to remove\\n   */\\n  function removeFlashBorrower(address borrower) external;\\n\\n  /**\\n   * @notice Returns true if the address is FlashBorrower, false otherwise\\n   * @param borrower The address to check\\n   * @return True if the given address is FlashBorrower, false otherwise\\n   */\\n  function isFlashBorrower(address borrower) external view returns (bool);\\n\\n  /**\\n   * @notice Adds a new address as Bridge\\n   * @param bridge The address of the new Bridge\\n   */\\n  function addBridge(address bridge) external;\\n\\n  /**\\n   * @notice Removes an address as Bridge\\n   * @param bridge The address of the bridge to remove\\n   */\\n  function removeBridge(address bridge) external;\\n\\n  /**\\n   * @notice Returns true if the address is Bridge, false otherwise\\n   * @param bridge The address to check\\n   * @return True if the given address is Bridge, false otherwise\\n   */\\n  function isBridge(address bridge) external view returns (bool);\\n\\n  /**\\n   * @notice Adds a new admin as AssetListingAdmin\\n   * @param admin The address of the new admin\\n   */\\n  function addAssetListingAdmin(address admin) external;\\n\\n  /**\\n   * @notice Removes an admin as AssetListingAdmin\\n   * @param admin The address of the admin to remove\\n   */\\n  function removeAssetListingAdmin(address admin) external;\\n\\n  /**\\n   * @notice Returns true if the address is AssetListingAdmin, false otherwise\\n   * @param admin The address to check\\n   * @return True if the given address is AssetListingAdmin, false otherwise\\n   */\\n  function isAssetListingAdmin(address admin) external view returns (bool);\\n}\\n\",\"keccak256\":\"0xe39a407a074d8ac950deb7d1d855b39d53e35a5a441a7074c3d26cddef10406b\",\"license\":\"AGPL-3.0\"},\"@aave/core-v3/contracts/interfaces/IPoolAddressesProvider.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0\\npragma solidity ^0.8.0;\\n\\n/**\\n * @title IPoolAddressesProvider\\n * @author Aave\\n * @notice Defines the basic interface for a Pool Addresses Provider.\\n */\\ninterface IPoolAddressesProvider {\\n  /**\\n   * @dev Emitted when the market identifier is updated.\\n   * @param oldMarketId The old id of the market\\n   * @param newMarketId The new id of the market\\n   */\\n  event MarketIdSet(string indexed oldMarketId, string indexed newMarketId);\\n\\n  /**\\n   * @dev Emitted when the pool is updated.\\n   * @param oldAddress The old address of the Pool\\n   * @param newAddress The new address of the Pool\\n   */\\n  event PoolUpdated(address indexed oldAddress, address indexed newAddress);\\n\\n  /**\\n   * @dev Emitted when the pool configurator is updated.\\n   * @param oldAddress The old address of the PoolConfigurator\\n   * @param newAddress The new address of the PoolConfigurator\\n   */\\n  event PoolConfiguratorUpdated(address indexed oldAddress, address indexed newAddress);\\n\\n  /**\\n   * @dev Emitted when the price oracle is updated.\\n   * @param oldAddress The old address of the PriceOracle\\n   * @param newAddress The new address of the PriceOracle\\n   */\\n  event PriceOracleUpdated(address indexed oldAddress, address indexed newAddress);\\n\\n  /**\\n   * @dev Emitted when the ACL manager is updated.\\n   * @param oldAddress The old address of the ACLManager\\n   * @param newAddress The new address of the ACLManager\\n   */\\n  event ACLManagerUpdated(address indexed oldAddress, address indexed newAddress);\\n\\n  /**\\n   * @dev Emitted when the ACL admin is updated.\\n   * @param oldAddress The old address of the ACLAdmin\\n   * @param newAddress The new address of the ACLAdmin\\n   */\\n  event ACLAdminUpdated(address indexed oldAddress, address indexed newAddress);\\n\\n  /**\\n   * @dev Emitted when the price oracle sentinel is updated.\\n   * @param oldAddress The old address of the PriceOracleSentinel\\n   * @param newAddress The new address of the PriceOracleSentinel\\n   */\\n  event PriceOracleSentinelUpdated(address indexed oldAddress, address indexed newAddress);\\n\\n  /**\\n   * @dev Emitted when the pool data provider is updated.\\n   * @param oldAddress The old address of the PoolDataProvider\\n   * @param newAddress The new address of the PoolDataProvider\\n   */\\n  event PoolDataProviderUpdated(address indexed oldAddress, address indexed newAddress);\\n\\n  /**\\n   * @dev Emitted when a new proxy is created.\\n   * @param id The identifier of the proxy\\n   * @param proxyAddress The address of the created proxy contract\\n   * @param implementationAddress The address of the implementation contract\\n   */\\n  event ProxyCreated(\\n    bytes32 indexed id,\\n    address indexed proxyAddress,\\n    address indexed implementationAddress\\n  );\\n\\n  /**\\n   * @dev Emitted when a new non-proxied contract address is registered.\\n   * @param id The identifier of the contract\\n   * @param oldAddress The address of the old contract\\n   * @param newAddress The address of the new contract\\n   */\\n  event AddressSet(bytes32 indexed id, address indexed oldAddress, address indexed newAddress);\\n\\n  /**\\n   * @dev Emitted when the implementation of the proxy registered with id is updated\\n   * @param id The identifier of the contract\\n   * @param proxyAddress The address of the proxy contract\\n   * @param oldImplementationAddress The address of the old implementation contract\\n   * @param newImplementationAddress The address of the new implementation contract\\n   */\\n  event AddressSetAsProxy(\\n    bytes32 indexed id,\\n    address indexed proxyAddress,\\n    address oldImplementationAddress,\\n    address indexed newImplementationAddress\\n  );\\n\\n  /**\\n   * @notice Returns the id of the Aave market to which this contract points to.\\n   * @return The market id\\n   */\\n  function getMarketId() external view returns (string memory);\\n\\n  /**\\n   * @notice Associates an id with a specific PoolAddressesProvider.\\n   * @dev This can be used to create an onchain registry of PoolAddressesProviders to\\n   * identify and validate multiple Aave markets.\\n   * @param newMarketId The market id\\n   */\\n  function setMarketId(string calldata newMarketId) external;\\n\\n  /**\\n   * @notice Returns an address by its identifier.\\n   * @dev The returned address might be an EOA or a contract, potentially proxied\\n   * @dev It returns ZERO if there is no registered address with the given id\\n   * @param id The id\\n   * @return The address of the registered for the specified id\\n   */\\n  function getAddress(bytes32 id) external view returns (address);\\n\\n  /**\\n   * @notice General function to update the implementation of a proxy registered with\\n   * certain `id`. If there is no proxy registered, it will instantiate one and\\n   * set as implementation the `newImplementationAddress`.\\n   * @dev IMPORTANT Use this function carefully, only for ids that don't have an explicit\\n   * setter function, in order to avoid unexpected consequences\\n   * @param id The id\\n   * @param newImplementationAddress The address of the new implementation\\n   */\\n  function setAddressAsProxy(bytes32 id, address newImplementationAddress) external;\\n\\n  /**\\n   * @notice Sets an address for an id replacing the address saved in the addresses map.\\n   * @dev IMPORTANT Use this function carefully, as it will do a hard replacement\\n   * @param id The id\\n   * @param newAddress The address to set\\n   */\\n  function setAddress(bytes32 id, address newAddress) external;\\n\\n  /**\\n   * @notice Returns the address of the Pool proxy.\\n   * @return The Pool proxy address\\n   */\\n  function getPool() external view returns (address);\\n\\n  /**\\n   * @notice Updates the implementation of the Pool, or creates a proxy\\n   * setting the new `pool` implementation when the function is called for the first time.\\n   * @param newPoolImpl The new Pool implementation\\n   */\\n  function setPoolImpl(address newPoolImpl) external;\\n\\n  /**\\n   * @notice Returns the address of the PoolConfigurator proxy.\\n   * @return The PoolConfigurator proxy address\\n   */\\n  function getPoolConfigurator() external view returns (address);\\n\\n  /**\\n   * @notice Updates the implementation of the PoolConfigurator, or creates a proxy\\n   * setting the new `PoolConfigurator` implementation when the function is called for the first time.\\n   * @param newPoolConfiguratorImpl The new PoolConfigurator implementation\\n   */\\n  function setPoolConfiguratorImpl(address newPoolConfiguratorImpl) external;\\n\\n  /**\\n   * @notice Returns the address of the price oracle.\\n   * @return The address of the PriceOracle\\n   */\\n  function getPriceOracle() external view returns (address);\\n\\n  /**\\n   * @notice Updates the address of the price oracle.\\n   * @param newPriceOracle The address of the new PriceOracle\\n   */\\n  function setPriceOracle(address newPriceOracle) external;\\n\\n  /**\\n   * @notice Returns the address of the ACL manager.\\n   * @return The address of the ACLManager\\n   */\\n  function getACLManager() external view returns (address);\\n\\n  /**\\n   * @notice Updates the address of the ACL manager.\\n   * @param newAclManager The address of the new ACLManager\\n   */\\n  function setACLManager(address newAclManager) external;\\n\\n  /**\\n   * @notice Returns the address of the ACL admin.\\n   * @return The address of the ACL admin\\n   */\\n  function getACLAdmin() external view returns (address);\\n\\n  /**\\n   * @notice Updates the address of the ACL admin.\\n   * @param newAclAdmin The address of the new ACL admin\\n   */\\n  function setACLAdmin(address newAclAdmin) external;\\n\\n  /**\\n   * @notice Returns the address of the price oracle sentinel.\\n   * @return The address of the PriceOracleSentinel\\n   */\\n  function getPriceOracleSentinel() external view returns (address);\\n\\n  /**\\n   * @notice Updates the address of the price oracle sentinel.\\n   * @param newPriceOracleSentinel The address of the new PriceOracleSentinel\\n   */\\n  function setPriceOracleSentinel(address newPriceOracleSentinel) external;\\n\\n  /**\\n   * @notice Returns the address of the data provider.\\n   * @return The address of the DataProvider\\n   */\\n  function getPoolDataProvider() external view returns (address);\\n\\n  /**\\n   * @notice Updates the address of the data provider.\\n   * @param newDataProvider The address of the new DataProvider\\n   */\\n  function setPoolDataProvider(address newDataProvider) external;\\n}\\n\",\"keccak256\":\"0x33d4308d9407b4ee2297fc4ba5acce1a96a6c658189e2778a4f6b90e032fb3b5\",\"license\":\"AGPL-3.0\"},\"@aave/core-v3/contracts/interfaces/IPriceOracleSentinel.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0\\npragma solidity ^0.8.0;\\n\\nimport {IPoolAddressesProvider} from './IPoolAddressesProvider.sol';\\n\\n/**\\n * @title IPriceOracleSentinel\\n * @author Aave\\n * @notice Defines the basic interface for the PriceOracleSentinel\\n */\\ninterface IPriceOracleSentinel {\\n  /**\\n   * @dev Emitted after the sequencer oracle is updated\\n   * @param newSequencerOracle The new sequencer oracle\\n   */\\n  event SequencerOracleUpdated(address newSequencerOracle);\\n\\n  /**\\n   * @dev Emitted after the grace period is updated\\n   * @param newGracePeriod The new grace period value\\n   */\\n  event GracePeriodUpdated(uint256 newGracePeriod);\\n\\n  /**\\n   * @notice Returns the PoolAddressesProvider\\n   * @return The address of the PoolAddressesProvider contract\\n   */\\n  function ADDRESSES_PROVIDER() external view returns (IPoolAddressesProvider);\\n\\n  /**\\n   * @notice Returns true if the `borrow` operation is allowed.\\n   * @dev Operation not allowed when PriceOracle is down or grace period not passed.\\n   * @return True if the `borrow` operation is allowed, false otherwise.\\n   */\\n  function isBorrowAllowed() external view returns (bool);\\n\\n  /**\\n   * @notice Returns true if the `liquidation` operation is allowed.\\n   * @dev Operation not allowed when PriceOracle is down or grace period not passed.\\n   * @return True if the `liquidation` operation is allowed, false otherwise.\\n   */\\n  function isLiquidationAllowed() external view returns (bool);\\n\\n  /**\\n   * @notice Updates the address of the sequencer oracle\\n   * @param newSequencerOracle The address of the new Sequencer Oracle to use\\n   */\\n  function setSequencerOracle(address newSequencerOracle) external;\\n\\n  /**\\n   * @notice Updates the duration of the grace period\\n   * @param newGracePeriod The value of the new grace period duration\\n   */\\n  function setGracePeriod(uint256 newGracePeriod) external;\\n\\n  /**\\n   * @notice Returns the SequencerOracle\\n   * @return The address of the sequencer oracle contract\\n   */\\n  function getSequencerOracle() external view returns (address);\\n\\n  /**\\n   * @notice Returns the grace period\\n   * @return The duration of the grace period\\n   */\\n  function getGracePeriod() external view returns (uint256);\\n}\\n\",\"keccak256\":\"0x6ebde76426a4217475ae05a284c37a6de80ff72b18ed969e6922b06b4504a92f\",\"license\":\"AGPL-3.0\"},\"@aave/core-v3/contracts/interfaces/ISequencerOracle.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0\\npragma solidity ^0.8.0;\\n\\n/**\\n * @title ISequencerOracle\\n * @author Aave\\n * @notice Defines the basic interface for a Sequencer oracle.\\n */\\ninterface ISequencerOracle {\\n  /**\\n   * @notice Returns the health status of the sequencer.\\n   * @return roundId The round ID from the aggregator for which the data was retrieved combined with a phase to ensure\\n   * that round IDs get larger as time moves forward.\\n   * @return answer The answer for the latest round: 0 if the sequencer is up, 1 if it is down.\\n   * @return startedAt The timestamp when the round was started.\\n   * @return updatedAt The timestamp of the block in which the answer was updated on L1.\\n   * @return answeredInRound The round ID of the round in which the answer was computed.\\n   */\\n  function latestRoundData()\\n    external\\n    view\\n    returns (\\n      uint80 roundId,\\n      int256 answer,\\n      uint256 startedAt,\\n      uint256 updatedAt,\\n      uint80 answeredInRound\\n    );\\n}\\n\",\"keccak256\":\"0x2b0cac1dc7d684eab009ada5e1f134f7c61c90d8802cf4ca948a35d6db6f9aba\",\"license\":\"AGPL-3.0\"},\"@aave/core-v3/contracts/protocol/configuration/PriceOracleSentinel.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.10;\\n\\nimport {Errors} from '../libraries/helpers/Errors.sol';\\nimport {IPoolAddressesProvider} from '../../interfaces/IPoolAddressesProvider.sol';\\nimport {IPriceOracleSentinel} from '../../interfaces/IPriceOracleSentinel.sol';\\nimport {ISequencerOracle} from '../../interfaces/ISequencerOracle.sol';\\nimport {IACLManager} from '../../interfaces/IACLManager.sol';\\n\\n/**\\n * @title PriceOracleSentinel\\n * @author Aave\\n * @notice It validates if operations are allowed depending on the PriceOracle health.\\n * @dev Once the PriceOracle gets up after an outage/downtime, users can make their positions healthy during a grace\\n *  period. So the PriceOracle is considered completely up once its up and the grace period passed.\\n */\\ncontract PriceOracleSentinel is IPriceOracleSentinel {\\n  /**\\n   * @dev Only pool admin can call functions marked by this modifier.\\n   */\\n  modifier onlyPoolAdmin() {\\n    IACLManager aclManager = IACLManager(ADDRESSES_PROVIDER.getACLManager());\\n    require(aclManager.isPoolAdmin(msg.sender), Errors.CALLER_NOT_POOL_ADMIN);\\n    _;\\n  }\\n\\n  /**\\n   * @dev Only risk or pool admin can call functions marked by this modifier.\\n   */\\n  modifier onlyRiskOrPoolAdmins() {\\n    IACLManager aclManager = IACLManager(ADDRESSES_PROVIDER.getACLManager());\\n    require(\\n      aclManager.isRiskAdmin(msg.sender) || aclManager.isPoolAdmin(msg.sender),\\n      Errors.CALLER_NOT_RISK_OR_POOL_ADMIN\\n    );\\n    _;\\n  }\\n\\n  IPoolAddressesProvider public immutable override ADDRESSES_PROVIDER;\\n\\n  ISequencerOracle internal _sequencerOracle;\\n\\n  uint256 internal _gracePeriod;\\n\\n  /**\\n   * @dev Constructor\\n   * @param provider The address of the PoolAddressesProvider\\n   * @param oracle The address of the SequencerOracle\\n   * @param gracePeriod The duration of the grace period in seconds\\n   */\\n  constructor(IPoolAddressesProvider provider, ISequencerOracle oracle, uint256 gracePeriod) {\\n    ADDRESSES_PROVIDER = provider;\\n    _sequencerOracle = oracle;\\n    _gracePeriod = gracePeriod;\\n  }\\n\\n  /// @inheritdoc IPriceOracleSentinel\\n  function isBorrowAllowed() public view override returns (bool) {\\n    return _isUpAndGracePeriodPassed();\\n  }\\n\\n  /// @inheritdoc IPriceOracleSentinel\\n  function isLiquidationAllowed() public view override returns (bool) {\\n    return _isUpAndGracePeriodPassed();\\n  }\\n\\n  /**\\n   * @notice Checks the sequencer oracle is healthy: is up and grace period passed.\\n   * @return True if the SequencerOracle is up and the grace period passed, false otherwise\\n   */\\n  function _isUpAndGracePeriodPassed() internal view returns (bool) {\\n    (, int256 answer, , uint256 lastUpdateTimestamp, ) = _sequencerOracle.latestRoundData();\\n    return answer == 0 && block.timestamp - lastUpdateTimestamp > _gracePeriod;\\n  }\\n\\n  /// @inheritdoc IPriceOracleSentinel\\n  function setSequencerOracle(address newSequencerOracle) public onlyPoolAdmin {\\n    _sequencerOracle = ISequencerOracle(newSequencerOracle);\\n    emit SequencerOracleUpdated(newSequencerOracle);\\n  }\\n\\n  /// @inheritdoc IPriceOracleSentinel\\n  function setGracePeriod(uint256 newGracePeriod) public onlyRiskOrPoolAdmins {\\n    _gracePeriod = newGracePeriod;\\n    emit GracePeriodUpdated(newGracePeriod);\\n  }\\n\\n  /// @inheritdoc IPriceOracleSentinel\\n  function getSequencerOracle() public view returns (address) {\\n    return address(_sequencerOracle);\\n  }\\n\\n  /// @inheritdoc IPriceOracleSentinel\\n  function getGracePeriod() public view returns (uint256) {\\n    return _gracePeriod;\\n  }\\n}\\n\",\"keccak256\":\"0xe19c67fd8d85638485db426c66cd47273bc1c1764422a8ee6f56ac3e0a3c76bd\",\"license\":\"BUSL-1.1\"},\"@aave/core-v3/contracts/protocol/libraries/helpers/Errors.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity ^0.8.0;\\n\\n/**\\n * @title Errors library\\n * @author Aave\\n * @notice Defines the error messages emitted by the different contracts of the Aave protocol\\n */\\nlibrary Errors {\\n  string public constant CALLER_NOT_POOL_ADMIN = '1'; // 'The caller of the function is not a pool admin'\\n  string public constant CALLER_NOT_EMERGENCY_ADMIN = '2'; // 'The caller of the function is not an emergency admin'\\n  string public constant CALLER_NOT_POOL_OR_EMERGENCY_ADMIN = '3'; // 'The caller of the function is not a pool or emergency admin'\\n  string public constant CALLER_NOT_RISK_OR_POOL_ADMIN = '4'; // 'The caller of the function is not a risk or pool admin'\\n  string public constant CALLER_NOT_ASSET_LISTING_OR_POOL_ADMIN = '5'; // 'The caller of the function is not an asset listing or pool admin'\\n  string public constant CALLER_NOT_BRIDGE = '6'; // 'The caller of the function is not a bridge'\\n  string public constant ADDRESSES_PROVIDER_NOT_REGISTERED = '7'; // 'Pool addresses provider is not registered'\\n  string public constant INVALID_ADDRESSES_PROVIDER_ID = '8'; // 'Invalid id for the pool addresses provider'\\n  string public constant NOT_CONTRACT = '9'; // 'Address is not a contract'\\n  string public constant CALLER_NOT_POOL_CONFIGURATOR = '10'; // 'The caller of the function is not the pool configurator'\\n  string public constant CALLER_NOT_ATOKEN = '11'; // 'The caller of the function is not an AToken'\\n  string public constant INVALID_ADDRESSES_PROVIDER = '12'; // 'The address of the pool addresses provider is invalid'\\n  string public constant INVALID_FLASHLOAN_EXECUTOR_RETURN = '13'; // 'Invalid return value of the flashloan executor function'\\n  string public constant RESERVE_ALREADY_ADDED = '14'; // 'Reserve has already been added to reserve list'\\n  string public constant NO_MORE_RESERVES_ALLOWED = '15'; // 'Maximum amount of reserves in the pool reached'\\n  string public constant EMODE_CATEGORY_RESERVED = '16'; // 'Zero eMode category is reserved for volatile heterogeneous assets'\\n  string public constant INVALID_EMODE_CATEGORY_ASSIGNMENT = '17'; // 'Invalid eMode category assignment to asset'\\n  string public constant RESERVE_LIQUIDITY_NOT_ZERO = '18'; // 'The liquidity of the reserve needs to be 0'\\n  string public constant FLASHLOAN_PREMIUM_INVALID = '19'; // 'Invalid flashloan premium'\\n  string public constant INVALID_RESERVE_PARAMS = '20'; // 'Invalid risk parameters for the reserve'\\n  string public constant INVALID_EMODE_CATEGORY_PARAMS = '21'; // 'Invalid risk parameters for the eMode category'\\n  string public constant BRIDGE_PROTOCOL_FEE_INVALID = '22'; // 'Invalid bridge protocol fee'\\n  string public constant CALLER_MUST_BE_POOL = '23'; // 'The caller of this function must be a pool'\\n  string public constant INVALID_MINT_AMOUNT = '24'; // 'Invalid amount to mint'\\n  string public constant INVALID_BURN_AMOUNT = '25'; // 'Invalid amount to burn'\\n  string public constant INVALID_AMOUNT = '26'; // 'Amount must be greater than 0'\\n  string public constant RESERVE_INACTIVE = '27'; // 'Action requires an active reserve'\\n  string public constant RESERVE_FROZEN = '28'; // 'Action cannot be performed because the reserve is frozen'\\n  string public constant RESERVE_PAUSED = '29'; // 'Action cannot be performed because the reserve is paused'\\n  string public constant BORROWING_NOT_ENABLED = '30'; // 'Borrowing is not enabled'\\n  string public constant STABLE_BORROWING_NOT_ENABLED = '31'; // 'Stable borrowing is not enabled'\\n  string public constant NOT_ENOUGH_AVAILABLE_USER_BALANCE = '32'; // 'User cannot withdraw more than the available balance'\\n  string public constant INVALID_INTEREST_RATE_MODE_SELECTED = '33'; // 'Invalid interest rate mode selected'\\n  string public constant COLLATERAL_BALANCE_IS_ZERO = '34'; // 'The collateral balance is 0'\\n  string public constant HEALTH_FACTOR_LOWER_THAN_LIQUIDATION_THRESHOLD = '35'; // 'Health factor is lesser than the liquidation threshold'\\n  string public constant COLLATERAL_CANNOT_COVER_NEW_BORROW = '36'; // 'There is not enough collateral to cover a new borrow'\\n  string public constant COLLATERAL_SAME_AS_BORROWING_CURRENCY = '37'; // 'Collateral is (mostly) the same currency that is being borrowed'\\n  string public constant AMOUNT_BIGGER_THAN_MAX_LOAN_SIZE_STABLE = '38'; // 'The requested amount is greater than the max loan size in stable rate mode'\\n  string public constant NO_DEBT_OF_SELECTED_TYPE = '39'; // 'For repayment of a specific type of debt, the user needs to have debt that type'\\n  string public constant NO_EXPLICIT_AMOUNT_TO_REPAY_ON_BEHALF = '40'; // 'To repay on behalf of a user an explicit amount to repay is needed'\\n  string public constant NO_OUTSTANDING_STABLE_DEBT = '41'; // 'User does not have outstanding stable rate debt on this reserve'\\n  string public constant NO_OUTSTANDING_VARIABLE_DEBT = '42'; // 'User does not have outstanding variable rate debt on this reserve'\\n  string public constant UNDERLYING_BALANCE_ZERO = '43'; // 'The underlying balance needs to be greater than 0'\\n  string public constant INTEREST_RATE_REBALANCE_CONDITIONS_NOT_MET = '44'; // 'Interest rate rebalance conditions were not met'\\n  string public constant HEALTH_FACTOR_NOT_BELOW_THRESHOLD = '45'; // 'Health factor is not below the threshold'\\n  string public constant COLLATERAL_CANNOT_BE_LIQUIDATED = '46'; // 'The collateral chosen cannot be liquidated'\\n  string public constant SPECIFIED_CURRENCY_NOT_BORROWED_BY_USER = '47'; // 'User did not borrow the specified currency'\\n  string public constant INCONSISTENT_FLASHLOAN_PARAMS = '49'; // 'Inconsistent flashloan parameters'\\n  string public constant BORROW_CAP_EXCEEDED = '50'; // 'Borrow cap is exceeded'\\n  string public constant SUPPLY_CAP_EXCEEDED = '51'; // 'Supply cap is exceeded'\\n  string public constant UNBACKED_MINT_CAP_EXCEEDED = '52'; // 'Unbacked mint cap is exceeded'\\n  string public constant DEBT_CEILING_EXCEEDED = '53'; // 'Debt ceiling is exceeded'\\n  string public constant UNDERLYING_CLAIMABLE_RIGHTS_NOT_ZERO = '54'; // 'Claimable rights over underlying not zero (aToken supply or accruedToTreasury)'\\n  string public constant STABLE_DEBT_NOT_ZERO = '55'; // 'Stable debt supply is not zero'\\n  string public constant VARIABLE_DEBT_SUPPLY_NOT_ZERO = '56'; // 'Variable debt supply is not zero'\\n  string public constant LTV_VALIDATION_FAILED = '57'; // 'Ltv validation failed'\\n  string public constant INCONSISTENT_EMODE_CATEGORY = '58'; // 'Inconsistent eMode category'\\n  string public constant PRICE_ORACLE_SENTINEL_CHECK_FAILED = '59'; // 'Price oracle sentinel validation failed'\\n  string public constant ASSET_NOT_BORROWABLE_IN_ISOLATION = '60'; // 'Asset is not borrowable in isolation mode'\\n  string public constant RESERVE_ALREADY_INITIALIZED = '61'; // 'Reserve has already been initialized'\\n  string public constant USER_IN_ISOLATION_MODE_OR_LTV_ZERO = '62'; // 'User is in isolation mode or ltv is zero'\\n  string public constant INVALID_LTV = '63'; // 'Invalid ltv parameter for the reserve'\\n  string public constant INVALID_LIQ_THRESHOLD = '64'; // 'Invalid liquidity threshold parameter for the reserve'\\n  string public constant INVALID_LIQ_BONUS = '65'; // 'Invalid liquidity bonus parameter for the reserve'\\n  string public constant INVALID_DECIMALS = '66'; // 'Invalid decimals parameter of the underlying asset of the reserve'\\n  string public constant INVALID_RESERVE_FACTOR = '67'; // 'Invalid reserve factor parameter for the reserve'\\n  string public constant INVALID_BORROW_CAP = '68'; // 'Invalid borrow cap for the reserve'\\n  string public constant INVALID_SUPPLY_CAP = '69'; // 'Invalid supply cap for the reserve'\\n  string public constant INVALID_LIQUIDATION_PROTOCOL_FEE = '70'; // 'Invalid liquidation protocol fee for the reserve'\\n  string public constant INVALID_EMODE_CATEGORY = '71'; // 'Invalid eMode category for the reserve'\\n  string public constant INVALID_UNBACKED_MINT_CAP = '72'; // 'Invalid unbacked mint cap for the reserve'\\n  string public constant INVALID_DEBT_CEILING = '73'; // 'Invalid debt ceiling for the reserve\\n  string public constant INVALID_RESERVE_INDEX = '74'; // 'Invalid reserve index'\\n  string public constant ACL_ADMIN_CANNOT_BE_ZERO = '75'; // 'ACL admin cannot be set to the zero address'\\n  string public constant INCONSISTENT_PARAMS_LENGTH = '76'; // 'Array parameters that should be equal length are not'\\n  string public constant ZERO_ADDRESS_NOT_VALID = '77'; // 'Zero address not valid'\\n  string public constant INVALID_EXPIRATION = '78'; // 'Invalid expiration'\\n  string public constant INVALID_SIGNATURE = '79'; // 'Invalid signature'\\n  string public constant OPERATION_NOT_SUPPORTED = '80'; // 'Operation not supported'\\n  string public constant DEBT_CEILING_NOT_ZERO = '81'; // 'Debt ceiling is not zero'\\n  string public constant ASSET_NOT_LISTED = '82'; // 'Asset is not listed'\\n  string public constant INVALID_OPTIMAL_USAGE_RATIO = '83'; // 'Invalid optimal usage ratio'\\n  string public constant INVALID_OPTIMAL_STABLE_TO_TOTAL_DEBT_RATIO = '84'; // 'Invalid optimal stable to total debt ratio'\\n  string public constant UNDERLYING_CANNOT_BE_RESCUED = '85'; // 'The underlying asset cannot be rescued'\\n  string public constant ADDRESSES_PROVIDER_ALREADY_ADDED = '86'; // 'Reserve has already been added to reserve list'\\n  string public constant POOL_ADDRESSES_DO_NOT_MATCH = '87'; // 'The token implementation pool address and the pool address provided by the initializing pool do not match'\\n  string public constant STABLE_BORROWING_ENABLED = '88'; // 'Stable borrowing is enabled'\\n  string public constant SILOED_BORROWING_VIOLATION = '89'; // 'User is trying to borrow multiple assets including a siloed one'\\n  string public constant RESERVE_DEBT_NOT_ZERO = '90'; // the total debt of the reserve needs to be 0\\n  string public constant FLASHLOAN_DISABLED = '91'; // FlashLoaning for this asset is disabled\\n}\\n\",\"keccak256\":\"0x61757945ed506349f2cec8b99806124ef17f70644faba9860fb134df8ca34e86\",\"license\":\"BUSL-1.1\"}},\"version\":1}",
+  "bytecode": "0x60a060405234801561001057600080fd5b5060405161095538038061095583398101604081905261002f91610076565b6001600160a01b03928316608052600080546001600160a01b03191692909316919091179091556001556100b9565b6001600160a01b038116811461007357600080fd5b50565b60008060006060848603121561008b57600080fd5b83516100968161005e565b60208501519093506100a78161005e565b80925050604084015190509250925092565b6080516108746100e160003960008181608701528181610155015261036a01526108746000f3fe608060405234801561001057600080fd5b506004361061007d5760003560e01c80637a5d20ea1161005b5780637a5d20ea146100f1578063dbd1838814610109578063f0aef31c1461011a578063f2f659601461012f57600080fd5b80630542975c1461008257806312168dc2146100d357806349aa2e81146100f1575b600080fd5b6100a97f000000000000000000000000000000000000000000000000000000000000000081565b60405173ffffffffffffffffffffffffffffffffffffffff90911681526020015b60405180910390f35b60005473ffffffffffffffffffffffffffffffffffffffff166100a9565b6100f9610142565b60405190151581526020016100ca565b6001546040519081526020016100ca565b61012d6101283660046106a2565b610151565b005b61012d61013d3660046106c6565b610366565b600061014c6105c0565b905090565b60007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663707cd7166040518163ffffffff1660e01b8152600401602060405180830381865afa1580156101be573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101e291906106df565b6040517f7be53ca100000000000000000000000000000000000000000000000000000000815233600482015290915073ffffffffffffffffffffffffffffffffffffffff821690637be53ca190602401602060405180830381865afa15801561024f573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061027391906106fc565b6040518060400160405280600181526020017f3100000000000000000000000000000000000000000000000000000000000000815250906102ea576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016102e1919061071e565b60405180910390fd5b50600080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff84169081179091556040519081527f95cbf1d8f44ec81ff345ed9cf2fe53b6a6473e072bf046ee412f198c54dba449906020015b60405180910390a15050565b60007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663707cd7166040518163ffffffff1660e01b8152600401602060405180830381865afa1580156103d3573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103f791906106df565b6040517f674b5e4d00000000000000000000000000000000000000000000000000000000815233600482015290915073ffffffffffffffffffffffffffffffffffffffff82169063674b5e4d90602401602060405180830381865afa158015610464573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061048891906106fc565b8061051c57506040517f7be53ca100000000000000000000000000000000000000000000000000000000815233600482015273ffffffffffffffffffffffffffffffffffffffff821690637be53ca190602401602060405180830381865afa1580156104f8573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061051c91906106fc565b6040518060400160405280600181526020017f34000000000000000000000000000000000000000000000000000000000000008152509061058a576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016102e1919061071e565b5060018290556040518281527f33d1191f5a3abfe19d468d51bb5ece97489f1277a912a5b5c65992fc279ad3d49060200161035a565b60008060008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663feaf968c6040518163ffffffff1660e01b815260040160a060405180830381865afa158015610631573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061065591906107b0565b5093505092505081600014801561067657506001546106748242610800565b115b9250505090565b73ffffffffffffffffffffffffffffffffffffffff8116811461069f57600080fd5b50565b6000602082840312156106b457600080fd5b81356106bf8161067d565b9392505050565b6000602082840312156106d857600080fd5b5035919050565b6000602082840312156106f157600080fd5b81516106bf8161067d565b60006020828403121561070e57600080fd5b815180151581146106bf57600080fd5b600060208083528351808285015260005b8181101561074b5785810183015185820160400152820161072f565b8181111561075d576000604083870101525b50601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016929092016040019392505050565b805169ffffffffffffffffffff811681146107ab57600080fd5b919050565b600080600080600060a086880312156107c857600080fd5b6107d186610791565b94506020860151935060408601519250606086015191506107f460808701610791565b90509295509295909350565b600082821015610839577f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b50039056fea2646970667358221220b7c341471ece14da8cbc380cf64aa440efc800eceee0be97232315b9514d225f64736f6c634300080a0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061007d5760003560e01c80637a5d20ea1161005b5780637a5d20ea146100f1578063dbd1838814610109578063f0aef31c1461011a578063f2f659601461012f57600080fd5b80630542975c1461008257806312168dc2146100d357806349aa2e81146100f1575b600080fd5b6100a97f000000000000000000000000000000000000000000000000000000000000000081565b60405173ffffffffffffffffffffffffffffffffffffffff90911681526020015b60405180910390f35b60005473ffffffffffffffffffffffffffffffffffffffff166100a9565b6100f9610142565b60405190151581526020016100ca565b6001546040519081526020016100ca565b61012d6101283660046106a2565b610151565b005b61012d61013d3660046106c6565b610366565b600061014c6105c0565b905090565b60007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663707cd7166040518163ffffffff1660e01b8152600401602060405180830381865afa1580156101be573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101e291906106df565b6040517f7be53ca100000000000000000000000000000000000000000000000000000000815233600482015290915073ffffffffffffffffffffffffffffffffffffffff821690637be53ca190602401602060405180830381865afa15801561024f573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061027391906106fc565b6040518060400160405280600181526020017f3100000000000000000000000000000000000000000000000000000000000000815250906102ea576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016102e1919061071e565b60405180910390fd5b50600080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff84169081179091556040519081527f95cbf1d8f44ec81ff345ed9cf2fe53b6a6473e072bf046ee412f198c54dba449906020015b60405180910390a15050565b60007f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff1663707cd7166040518163ffffffff1660e01b8152600401602060405180830381865afa1580156103d3573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103f791906106df565b6040517f674b5e4d00000000000000000000000000000000000000000000000000000000815233600482015290915073ffffffffffffffffffffffffffffffffffffffff82169063674b5e4d90602401602060405180830381865afa158015610464573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061048891906106fc565b8061051c57506040517f7be53ca100000000000000000000000000000000000000000000000000000000815233600482015273ffffffffffffffffffffffffffffffffffffffff821690637be53ca190602401602060405180830381865afa1580156104f8573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061051c91906106fc565b6040518060400160405280600181526020017f34000000000000000000000000000000000000000000000000000000000000008152509061058a576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016102e1919061071e565b5060018290556040518281527f33d1191f5a3abfe19d468d51bb5ece97489f1277a912a5b5c65992fc279ad3d49060200161035a565b60008060008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663feaf968c6040518163ffffffff1660e01b815260040160a060405180830381865afa158015610631573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061065591906107b0565b5093505092505081600014801561067657506001546106748242610800565b115b9250505090565b73ffffffffffffffffffffffffffffffffffffffff8116811461069f57600080fd5b50565b6000602082840312156106b457600080fd5b81356106bf8161067d565b9392505050565b6000602082840312156106d857600080fd5b5035919050565b6000602082840312156106f157600080fd5b81516106bf8161067d565b60006020828403121561070e57600080fd5b815180151581146106bf57600080fd5b600060208083528351808285015260005b8181101561074b5785810183015185820160400152820161072f565b8181111561075d576000604083870101525b50601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016929092016040019392505050565b805169ffffffffffffffffffff811681146107ab57600080fd5b919050565b600080600080600060a086880312156107c857600080fd5b6107d186610791565b94506020860151935060408601519250606086015191506107f460808701610791565b90509295509295909350565b600082821015610839577f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b50039056fea2646970667358221220b7c341471ece14da8cbc380cf64aa440efc800eceee0be97232315b9514d225f64736f6c634300080a0033",
+  "devdoc": {
+    "author": "Aave",
+    "details": "Once the PriceOracle gets up after an outage/downtime, users can make their positions healthy during a grace  period. So the PriceOracle is considered completely up once its up and the grace period passed.",
+    "kind": "dev",
+    "methods": {
+      "constructor": {
+        "details": "Constructor",
+        "params": {
+          "gracePeriod": "The duration of the grace period in seconds",
+          "oracle": "The address of the SequencerOracle",
+          "provider": "The address of the PoolAddressesProvider"
+        }
+      },
+      "getGracePeriod()": {
+        "returns": {
+          "_0": "The duration of the grace period"
+        }
+      },
+      "getSequencerOracle()": {
+        "returns": {
+          "_0": "The address of the sequencer oracle contract"
+        }
+      },
+      "isBorrowAllowed()": {
+        "details": "Operation not allowed when PriceOracle is down or grace period not passed.",
+        "returns": {
+          "_0": "True if the `borrow` operation is allowed, false otherwise."
+        }
+      },
+      "isLiquidationAllowed()": {
+        "details": "Operation not allowed when PriceOracle is down or grace period not passed.",
+        "returns": {
+          "_0": "True if the `liquidation` operation is allowed, false otherwise."
+        }
+      },
+      "setGracePeriod(uint256)": {
+        "params": {
+          "newGracePeriod": "The value of the new grace period duration"
+        }
+      },
+      "setSequencerOracle(address)": {
+        "params": {
+          "newSequencerOracle": "The address of the new Sequencer Oracle to use"
+        }
+      }
+    },
+    "stateVariables": {
+      "ADDRESSES_PROVIDER": {
+        "return": "The address of the PoolAddressesProvider contract",
+        "returns": {
+          "_0": "The address of the PoolAddressesProvider contract"
+        }
+      }
+    },
+    "title": "PriceOracleSentinel",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "ADDRESSES_PROVIDER()": {
+        "notice": "Returns the PoolAddressesProvider"
+      },
+      "getGracePeriod()": {
+        "notice": "Returns the grace period"
+      },
+      "getSequencerOracle()": {
+        "notice": "Returns the SequencerOracle"
+      },
+      "isBorrowAllowed()": {
+        "notice": "Returns true if the `borrow` operation is allowed."
+      },
+      "isLiquidationAllowed()": {
+        "notice": "Returns true if the `liquidation` operation is allowed."
+      },
+      "setGracePeriod(uint256)": {
+        "notice": "Updates the duration of the grace period"
+      },
+      "setSequencerOracle(address)": {
+        "notice": "Updates the address of the sequencer oracle"
+      }
+    },
+    "notice": "It validates if operations are allowed depending on the PriceOracle health.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 4511,
+        "contract": "@aave/core-v3/contracts/protocol/configuration/PriceOracleSentinel.sol:PriceOracleSentinel",
+        "label": "_sequencerOracle",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_contract(ISequencerOracle)3775"
+      },
+      {
+        "astId": 4513,
+        "contract": "@aave/core-v3/contracts/protocol/configuration/PriceOracleSentinel.sol:PriceOracleSentinel",
+        "label": "_gracePeriod",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_contract(ISequencerOracle)3775": {
+        "encoding": "inplace",
+        "label": "contract ISequencerOracle",
+        "numberOfBytes": "20"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
